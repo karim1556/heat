@@ -18,7 +18,9 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+.venv/lib/
+venv/lib/
+env/lib/
 lib64/
 parts/
 sdist/
@@ -35,7 +37,7 @@ venv/
 ENV/
 env/
 
-# Node / Next.js / Frontend
+# Node / Next.js / Frontend (Make sure frontend/lib is NEVER ignored!)
 node_modules/
 frontend/node_modules/
 .next/
@@ -44,6 +46,8 @@ frontend/out/
 .vercel/
 tsconfig.tsbuildinfo
 frontend/tsconfig.tsbuildinfo
+!frontend/lib/
+!frontend/lib/**
 
 # Data & Raw Caches
 # Ignore raw weather API cache JSON files & cache subdirectories (9,600+ files)
