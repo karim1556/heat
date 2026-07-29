@@ -79,14 +79,21 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 # URL. allow_credentials is False because this app has no cookie/session auth
 # -- that also keeps "*" a valid origin value (browsers reject
 # allow_origins=["*"] combined with allow_credentials=True).
-FRONTEND_ORIGIN = os.environ.get("FRONTEND_ORIGIN", "*")
+frontend_origin_env = os.environ.get("FRONTEND_ORIGIN", "*")
+origins = ["*"] if frontend_origin_env == "*" or not frontend_origin_env else [
+    o.strip().rstrip("/") for o in frontend_origin_env.split(",") if o.strip()
+]
+if "*" not in origins:
+    origins.append("*")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[FRONTEND_ORIGIN],
+    allow_origins=["*"],
     allow_credentials=False,
-    allow_methods=["GET", "POST"],
+    allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 FORECASTER_PATH = "models/artifacts/forecaster.pt"
 ANOMALY_PATH = "models/artifacts/anomaly.pkl"
