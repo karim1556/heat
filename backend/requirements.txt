@@ -9,7 +9,7 @@ pydantic==2.7.4
 sqlalchemy==2.0.31
 psycopg2-binary==2.9.9
 slowapi==0.1.9
-python-dotenv==1.2.2
+python-dotenv>=1.0.0
 pytest==8.2.2
 hypothesis==6.103.1
 matplotlib==3.9.0
