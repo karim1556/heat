@@ -1,0 +1,14 @@
+{
+  "strike": 99.0,
+  "window_days": 14,
+  "product_type": "catastrophe_insurance",
+  "frame": "catastrophe_insurance",
+  "cap": 0.9,
+  "trigger_rate": 0.11538461538461539,
+  "premium_to_cap": 0.14804643139025886,
+  "shortfall_rate": 0.134796762808811,
+  "overpay_rate": 0.019525069976877207,
+  "mae_improvement_pct": 13.122203427090486,
+  "n_catastrophe_passing": 24,
+  "strike_at_grid_ceiling": false
+}

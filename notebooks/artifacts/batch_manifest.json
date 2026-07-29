@@ -1,0 +1,3597 @@
+{
+  "created": "2026-07-23T05:11:10.628157+00:00",
+  "states": {
+    "US-Arizona": {
+      "status": "skipped",
+      "at": "2026-07-23T06:25:55.083947+00:00"
+    },
+    "IN-Assam": {
+      "status": "skipped",
+      "at": "2026-07-23T05:46:08.593719+00:00"
+    },
+    "IN-Bihar": {
+      "status": "skipped",
+      "at": "2026-07-23T05:46:08.594763+00:00"
+    },
+    "IN-Andhra Pradesh": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 54.5
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 6.4
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.7
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 9.6
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T05:44:40.410043+00:00",
+      "seconds": 83.7
+    },
+    "IN-Arunachal Pradesh": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 61.1
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.5
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.9
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.3
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.8
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 8.1
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.4
+        }
+      ],
+      "at": "2026-07-23T05:46:08.592240+00:00",
+      "seconds": 88.2
+    },
+    "IN-Chhattisgarh": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 52.7
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.7
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.1
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.7
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 8.6
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T05:47:27.157414+00:00",
+      "seconds": 78.6
+    },
+    "IN-Delhi": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 63.1
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 6.3
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 2.0
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.9
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.8
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T05:48:57.825753+00:00",
+      "seconds": 90.7
+    },
+    "IN-Goa": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 54.9
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.9
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.8
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.4
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 9.8
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T05:50:21.413945+00:00",
+      "seconds": 83.6
+    },
+    "IN-Gujarat": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 27.0
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 4.1
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 6.2
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.1
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 7.6
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.6
+        }
+      ],
+      "at": "2026-07-23T05:51:16.337996+00:00",
+      "seconds": 54.9
+    },
+    "IN-Haryana": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 60.3
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.2
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.2
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 7.4
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T05:52:42.181605+00:00",
+      "seconds": 85.8
+    },
+    "IN-Himachal Pradesh": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 53.3
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.0
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.7
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.2
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.7
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.6
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T05:53:59.946619+00:00",
+      "seconds": 77.8
+    },
+    "IN-Jharkhand": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 46.5
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.6
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.1
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 8.6
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.2
+        }
+      ],
+      "at": "2026-07-23T05:55:11.992988+00:00",
+      "seconds": 72.0
+    },
+    "IN-Karnataka": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 60.9
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.5
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.7
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 8.1
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T05:56:38.757115+00:00",
+      "seconds": 86.8
+    },
+    "IN-Kerala": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 143.0
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 5.8
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 6.0
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 9.6
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T08:16:57.838583+00:00",
+      "seconds": 174.0
+    },
+    "IN-Madhya Pradesh": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 46.0
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.5
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.9
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.4
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 7.5
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T05:57:56.385252+00:00",
+      "seconds": 71.5
+    },
+    "IN-Maharashtra": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 63.4
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 4.2
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 6.4
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.1
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 8.0
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T05:59:28.195186+00:00",
+      "seconds": 91.8
+    },
+    "IN-Manipur": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 51.9
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.7
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.0
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.4
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 7.8
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T06:00:44.788857+00:00",
+      "seconds": 76.6
+    },
+    "IN-Meghalaya": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 62.8
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.7
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.0
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.2
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 8.0
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T06:02:13.054135+00:00",
+      "seconds": 88.3
+    },
+    "IN-Mizoram": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 52.3
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.2
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.4
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.3
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 4.0
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 9.1
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T06:03:33.390734+00:00",
+      "seconds": 80.3
+    },
+    "IN-Nagaland": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 60.9
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 6.2
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.2
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 7.9
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T06:05:01.195992+00:00",
+      "seconds": 87.8
+    },
+    "IN-Odisha": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 51.4
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.6
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.7
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.4
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 8.5
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T06:06:18.449703+00:00",
+      "seconds": 77.3
+    },
+    "IN-Punjab": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 48.4
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.1
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.4
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.2
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T06:07:30.158071+00:00",
+      "seconds": 71.7
+    },
+    "IN-Rajasthan": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 45.6
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.1
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.4
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.5
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T06:08:39.277660+00:00",
+      "seconds": 69.1
+    },
+    "IN-Sikkim": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 38.5
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.7
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.2
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 84.2
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T08:19:17.853062+00:00",
+      "seconds": 140.0
+    },
+    "IN-Tamil Nadu": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 67.6
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 4.1
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 6.3
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.1
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.4
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 10.2
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T06:11:43.151617+00:00",
+      "seconds": 97.9
+    },
+    "IN-Telangana": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 61.8
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.7
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 6.8
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.1
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 9.3
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T06:13:13.512542+00:00",
+      "seconds": 90.4
+    },
+    "IN-Tripura": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 47.6
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 4.3
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 6.2
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.8
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 7.5
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T06:14:29.057814+00:00",
+      "seconds": 75.5
+    },
+    "IN-Uttar Pradesh": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 72.6
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.2
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 6.3
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.1
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.4
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.6
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T06:16:07.264947+00:00",
+      "seconds": 98.2
+    },
+    "IN-West Bengal": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 52.9
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 4.7
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.7
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.1
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.4
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 8.8
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T06:17:28.764358+00:00",
+      "seconds": 81.5
+    },
+    "US-Alabama": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 204.9
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.7
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.8
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.5
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.4
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.7
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.2
+        }
+      ],
+      "at": "2026-07-23T06:21:16.916486+00:00",
+      "seconds": 228.2
+    },
+    "US-Alaska": {
+      "status": "failed",
+      "failed_stage": "models.fusion.tevi",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 267.6
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.6
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.7
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "error",
+          "returncode": 1,
+          "seconds": 1.7
+        }
+      ],
+      "at": "2026-07-23T06:25:55.082687+00:00",
+      "seconds": 278.2
+    },
+    "US-Arkansas": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 46.5
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.5
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.8
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.4
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.4
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T06:27:04.345648+00:00",
+      "seconds": 69.3
+    },
+    "US-California": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 25.3
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.5
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.8
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 84.1
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T08:21:23.708421+00:00",
+      "seconds": 125.9
+    },
+    "US-Colorado": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 28.1
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.7
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.0
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 83.2
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T08:23:31.961292+00:00",
+      "seconds": 128.3
+    },
+    "US-Connecticut": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 52.9
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.0
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.9
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.1
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.3
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T06:30:40.436903+00:00",
+      "seconds": 76.1
+    },
+    "US-Delaware": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 53.4
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.2
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.2
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 4.2
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.3
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.6
+        }
+      ],
+      "at": "2026-07-23T06:31:59.514722+00:00",
+      "seconds": 79.1
+    },
+    "US-District of Columbia": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 57.3
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.4
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.4
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.9
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.8
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.4
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.5
+        }
+      ],
+      "at": "2026-07-23T06:33:22.218078+00:00",
+      "seconds": 82.7
+    },
+    "US-Florida": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 70.8
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.3
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.1
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.7
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 8.7
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T06:34:59.567773+00:00",
+      "seconds": 97.3
+    },
+    "US-Georgia": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 46.5
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.1
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.7
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.7
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.9
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.4
+        }
+      ],
+      "at": "2026-07-23T06:36:10.682383+00:00",
+      "seconds": 71.1
+    },
+    "US-Hawaii": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 62.5
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 6.9
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.1
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 10.4
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.4
+        }
+      ],
+      "at": "2026-07-23T06:37:43.122419+00:00",
+      "seconds": 92.4
+    },
+    "US-Idaho": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 46.9
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.7
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.9
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.3
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T06:38:52.098926+00:00",
+      "seconds": 69.0
+    },
+    "US-Illinois": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 52.9
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.6
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.8
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.1
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.5
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T06:40:08.665802+00:00",
+      "seconds": 76.6
+    },
+    "US-Indiana": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 49.3
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.9
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.7
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.4
+        }
+      ],
+      "at": "2026-07-23T06:41:20.923658+00:00",
+      "seconds": 72.3
+    },
+    "US-Iowa": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 41.9
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.1
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.9
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.7
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.7
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 80.7
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.5
+        }
+      ],
+      "at": "2026-07-23T06:43:41.441072+00:00",
+      "seconds": 140.5
+    },
+    "US-Kansas": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 137.6
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.9
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.9
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.2
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.3
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.4
+        }
+      ],
+      "at": "2026-07-23T06:46:24.001379+00:00",
+      "seconds": 162.6
+    },
+    "US-Kentucky": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 123.0
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.2
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.9
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.7
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.8
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.7
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.5
+        }
+      ],
+      "at": "2026-07-23T06:48:51.825371+00:00",
+      "seconds": 147.8
+    },
+    "US-Louisiana": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 143.5
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.3
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 6.0
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.9
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.3
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.7
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 8.5
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.4
+        }
+      ],
+      "at": "2026-07-23T06:51:43.605730+00:00",
+      "seconds": 171.8
+    },
+    "US-Maine": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 126.8
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.2
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.0
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.9
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.1
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.9
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.8
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.4
+        }
+      ],
+      "at": "2026-07-23T06:54:14.624266+00:00",
+      "seconds": 151.0
+    },
+    "US-Maryland": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 124.9
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.1
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 6.0
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.9
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.4
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.6
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.5
+        }
+      ],
+      "at": "2026-07-23T06:56:45.613641+00:00",
+      "seconds": 151.0
+    },
+    "US-Massachusetts": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 120.6
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.9
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.7
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.7
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.7
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T06:59:09.368024+00:00",
+      "seconds": 143.8
+    },
+    "US-Michigan": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 143.8
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.8
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.7
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.5
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.4
+        }
+      ],
+      "at": "2026-07-23T07:01:55.859557+00:00",
+      "seconds": 166.5
+    },
+    "US-Minnesota": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 124.4
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.1
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.8
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.7
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.3
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 4.2
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.5
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T07:04:24.120578+00:00",
+      "seconds": 148.3
+    },
+    "US-Mississippi": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 106.8
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.9
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.5
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T07:06:34.451684+00:00",
+      "seconds": 130.3
+    },
+    "US-Missouri": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 121.6
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.9
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.1
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.5
+        }
+      ],
+      "at": "2026-07-23T07:08:59.449899+00:00",
+      "seconds": 145.0
+    },
+    "US-Montana": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 124.8
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.9
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.6
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.4
+        }
+      ],
+      "at": "2026-07-23T07:11:27.139383+00:00",
+      "seconds": 147.7
+    },
+    "US-Nebraska": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 118.8
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.6
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.1
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.2
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.7
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.7
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.4
+        }
+      ],
+      "at": "2026-07-23T07:13:49.472743+00:00",
+      "seconds": 142.3
+    },
+    "US-Nevada": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 134.0
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.8
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.8
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.1
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.4
+        }
+      ],
+      "at": "2026-07-23T07:16:27.141898+00:00",
+      "seconds": 157.7
+    },
+    "US-New Hampshire": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 129.6
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.5
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.2
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.4
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T07:19:00.526508+00:00",
+      "seconds": 153.4
+    },
+    "US-New Jersey": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 129.8
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 6.1
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 2.0
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.2
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.7
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.4
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.4
+        }
+      ],
+      "at": "2026-07-23T07:21:36.101192+00:00",
+      "seconds": 155.6
+    },
+    "US-New Mexico": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 119.1
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.9
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.6
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.4
+        }
+      ],
+      "at": "2026-07-23T07:23:58.037539+00:00",
+      "seconds": 141.9
+    },
+    "US-New York": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 120.1
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.9
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.3
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T07:26:20.406269+00:00",
+      "seconds": 142.4
+    },
+    "US-North Carolina": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 119.6
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.1
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.0
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.7
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 7.4
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.4
+        }
+      ],
+      "at": "2026-07-23T07:28:45.330852+00:00",
+      "seconds": 144.9
+    },
+    "US-North Dakota": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 129.2
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.0
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.4
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.4
+        }
+      ],
+      "at": "2026-07-23T07:31:17.445077+00:00",
+      "seconds": 152.1
+    },
+    "US-Ohio": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 117.7
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.8
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.6
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T07:33:37.787928+00:00",
+      "seconds": 140.3
+    },
+    "US-Oklahoma": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 86.5
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.7
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.2
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 7.0
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T07:35:29.904780+00:00",
+      "seconds": 112.1
+    },
+    "US-Oregon": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 114.1
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.7
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.8
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 7.0
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.4
+        }
+      ],
+      "at": "2026-07-23T07:37:47.813978+00:00",
+      "seconds": 137.9
+    },
+    "US-Pennsylvania": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 124.5
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.7
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.8
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.2
+        }
+      ],
+      "at": "2026-07-23T07:40:16.035801+00:00",
+      "seconds": 148.2
+    },
+    "US-Rhode Island": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 126.9
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.7
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.8
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.5
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T07:42:45.096296+00:00",
+      "seconds": 149.1
+    },
+    "US-South Carolina": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 118.1
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.8
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.2
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.8
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 7.5
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.7
+        }
+      ],
+      "at": "2026-07-23T07:45:08.764743+00:00",
+      "seconds": 143.7
+    },
+    "US-South Dakota": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 78.5
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.1
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.0
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 4.2
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.0
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.7
+        }
+      ],
+      "at": "2026-07-23T07:46:52.598530+00:00",
+      "seconds": 103.8
+    },
+    "US-Tennessee": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 119.2
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.9
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 6.8
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T07:49:15.833981+00:00",
+      "seconds": 143.2
+    },
+    "US-Texas": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 160.3
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.8
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.1
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 7.2
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.2
+        }
+      ],
+      "at": "2026-07-23T07:52:21.558366+00:00",
+      "seconds": 185.7
+    },
+    "US-Utah": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 132.4
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.7
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.8
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.6
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T07:54:56.214668+00:00",
+      "seconds": 154.7
+    },
+    "US-Vermont": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 120.0
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.6
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.6
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.7
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.4
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.2
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T07:57:17.584749+00:00",
+      "seconds": 141.4
+    },
+    "US-Virginia": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 208.5
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.8
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.8
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 3.1
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.4
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 7.0
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T08:01:11.318261+00:00",
+      "seconds": 233.7
+    },
+    "US-Washington": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 124.2
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.8
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 7.3
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T08:03:39.485012+00:00",
+      "seconds": 148.2
+    },
+    "US-West Virginia": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 124.0
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.7
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.7
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.8
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.4
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.3
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T08:06:05.268399+00:00",
+      "seconds": 145.8
+    },
+    "US-Wisconsin": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 148.4
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 3.0
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 4.9
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.7
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.9
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.6
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.4
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.3
+        }
+      ],
+      "at": "2026-07-23T08:08:56.506221+00:00",
+      "seconds": 171.2
+    },
+    "US-Wyoming": {
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "models.stgcn.train",
+          "status": "ok",
+          "seconds": 134.6
+        },
+        {
+          "stage": "models.behavioral_agent.ppo_from_scratch",
+          "status": "ok",
+          "seconds": 2.4
+        },
+        {
+          "stage": "models.behavioral_agent.calibration",
+          "status": "ok",
+          "seconds": 5.0
+        },
+        {
+          "stage": "models.stgcn.evaluate_spatial",
+          "status": "ok",
+          "seconds": 1.6
+        },
+        {
+          "stage": "models.fusion.tevi",
+          "status": "ok",
+          "seconds": 2.7
+        },
+        {
+          "stage": "models.forecast.train",
+          "status": "ok",
+          "seconds": 3.5
+        },
+        {
+          "stage": "backend.backtest.report",
+          "status": "ok",
+          "seconds": 5.9
+        },
+        {
+          "stage": "models.anomaly.train",
+          "status": "ok",
+          "seconds": 1.2
+        }
+      ],
+      "at": "2026-07-23T08:11:33.618169+00:00",
+      "seconds": 157.1
+    }
+  },
+  "run_started": "2026-07-23T08:14:03.848067+00:00",
+  "interpreter": "/Users/krishnalalagarwal/Pricing the Heat/.venv/bin/python",
+  "stages": [
+    "models.stgcn.train",
+    "models.behavioral_agent.ppo_from_scratch",
+    "models.behavioral_agent.calibration",
+    "models.stgcn.evaluate_spatial",
+    "models.fusion.tevi",
+    "models.forecast.train",
+    "backend.backtest.report",
+    "models.anomaly.train"
+  ],
+  "stage_timeout_s": 1200,
+  "fail_fast": false,
+  "run_ended": "2026-07-23T08:23:31.964263+00:00",
+  "summary": {
+    "ok": 4,
+    "failed": 0,
+    "skipped": 0,
+    "targeted": 4
+  }
+}

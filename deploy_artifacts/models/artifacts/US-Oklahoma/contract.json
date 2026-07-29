@@ -1,0 +1,14 @@
+{
+  "strike": 90,
+  "window_days": 14,
+  "product_type": "income_smoothing",
+  "frame": "income_smoothing",
+  "cap": 0.9,
+  "trigger_rate": 0.3346153846153846,
+  "premium_to_cap": 0.5363293257047612,
+  "shortfall_rate": 0.1825369660460022,
+  "overpay_rate": 0.1665012322015334,
+  "mae_improvement_pct": 39.43449921539369,
+  "n_catastrophe_passing": 0,
+  "strike_at_grid_ceiling": false
+}

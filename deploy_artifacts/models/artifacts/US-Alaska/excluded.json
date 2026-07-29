@@ -1,0 +1,9 @@
+{
+  "excluded": true,
+  "state_key": "US-Alaska",
+  "reason": "insufficient heat-exposure days: 22 < 30 minimum strictly-positive loss-days -- state EXCLUDED from pricing (deliberate coverage boundary, not a fittable state)",
+  "positive_loss_days": 22,
+  "min_positive_loss_days": 30,
+  "stage": "models.fusion.tevi",
+  "at": "2026-07-23T06:46:44.798980+00:00"
+}

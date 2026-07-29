@@ -1,0 +1,483 @@
+# ONE anchor metro per state -- the metro whose REAL NASA POWER grid
+# represents that state heat pipeline. Wages are state-level (legislated per
+# state); heat stays metro-scale (physical, not legislative) because averaging
+# a whole state into one number would destroy the micro-climate premise the
+# STGCN exists for. Metro = largest populated place in the state by Natural
+# Earth pop_max (real public-domain data), unless a reason below overrides it.
+# bbox = metro coords +/-1.005deg (~2.01x2.01deg, a margin above, satisfying NASA POWER regional
+# >=2deg span; node count is data-driven from what POWER returns, never fixed.
+anchors:
+  'IN-Andhra Pradesh':
+    metro: 'Amaravati'
+    lat: 16.533658
+    lon: 80.52432
+    bbox: {lat_min: 15.5287, lat_max: 17.5387, lon_min: 79.5193, lon_max: 81.5293}
+    reason: 'largest populated place in state (Natural Earth pop_max=5800000)'
+  'IN-Arunachal Pradesh':
+    metro: 'Itanagar'
+    lat: 27.100399
+    lon: 93.616601
+    bbox: {lat_min: 26.0954, lat_max: 28.1054, lon_min: 92.6116, lon_max: 94.6216}
+    reason: 'largest populated place in state (Natural Earth pop_max=44971)'
+  'IN-Assam':
+    metro: 'Guwahati'
+    lat: 26.161963
+    lon: 91.768049
+    bbox: {lat_min: 25.157, lat_max: 27.167, lon_min: 90.763, lon_max: 92.773}
+    reason: 'largest populated place in state (Natural Earth pop_max=983000)'
+  'IN-Bihar':
+    metro: 'Patna'
+    lat: 25.626905
+    lon: 85.128093
+    bbox: {lat_min: 24.6219, lat_max: 26.6319, lon_min: 84.1231, lon_max: 86.1331}
+    reason: 'largest populated place in state (Natural Earth pop_max=2158000)'
+  'IN-Chhattisgarh':
+    metro: 'Bhilai'
+    lat: 21.218613
+    lon: 81.431387
+    bbox: {lat_min: 20.2136, lat_max: 22.2236, lon_min: 80.4264, lon_max: 82.4364}
+    reason: 'largest populated place in state (Natural Earth pop_max=1097000)'
+  'IN-Delhi':
+    metro: 'Delhi'
+    lat: 28.671939
+    lon: 77.228058
+    bbox: {lat_min: 27.6669, lat_max: 29.6769, lon_min: 76.2231, lon_max: 78.2331}
+    reason: 'largest populated place in state (Natural Earth pop_max=15926000)'
+  'IN-Goa':
+    metro: 'Panaji'
+    lat: 15.4909
+    lon: 73.8278
+    bbox: {lat_min: 14.4859, lat_max: 16.4959, lon_min: 72.8228, lon_max: 74.8328}
+    reason: 'state capital Panaji; Natural Earth has no populated-place point inside Goa 50m polygon'
+  'IN-Gujarat':
+    metro: 'Ahmedabad'
+    lat: 23.0225
+    lon: 72.5714
+    bbox: {lat_min: 22.0175, lat_max: 24.0275, lon_min: 71.5664, lon_max: 73.5764}
+    reason: 'largest metro (Ahmedabad); bbox aligned to existing committed NASA POWER cache'
+  'IN-Haryana':
+    metro: 'Faridabad'
+    lat: 28.435279
+    lon: 77.314721
+    bbox: {lat_min: 27.4303, lat_max: 29.4403, lon_min: 76.3097, lon_max: 78.3197}
+    reason: 'largest populated place in state (Natural Earth pop_max=1394000)'
+  'IN-Himachal Pradesh':
+    metro: 'Pathankot'
+    lat: 32.270342
+    lon: 75.720019
+    bbox: {lat_min: 31.2653, lat_max: 33.2753, lon_min: 74.715, lon_max: 76.725}
+    reason: 'largest populated place in state (Natural Earth pop_max=253987)'
+  'IN-Jharkhand':
+    metro: 'Jamshedpur'
+    lat: 22.789481
+    lon: 86.195573
+    bbox: {lat_min: 21.7845, lat_max: 23.7945, lon_min: 85.1906, lon_max: 87.2006}
+    reason: 'largest populated place in state (Natural Earth pop_max=1300000)'
+  'IN-Karnataka':
+    metro: 'Bengaluru'
+    lat: 12.971941
+    lon: 77.558064
+    bbox: {lat_min: 11.9669, lat_max: 13.9769, lon_min: 76.5531, lon_max: 78.5631}
+    reason: 'largest populated place in state (Natural Earth pop_max=6787000)'
+  'IN-Kerala':
+    metro: 'Thiruvananthapuram'
+    lat: 8.50193
+    lon: 76.948075
+    bbox: {lat_min: 7.4969, lat_max: 9.5069, lon_min: 75.9431, lon_max: 77.9531}
+    reason: 'largest populated place in state (Natural Earth pop_max=954000)'
+  'IN-Madhya Pradesh':
+    metro: 'Indore'
+    lat: 22.717005
+    lon: 75.863077
+    bbox: {lat_min: 21.712, lat_max: 23.722, lon_min: 74.8581, lon_max: 76.8681}
+    reason: 'largest populated place in state (Natural Earth pop_max=2026000)'
+  'IN-Maharashtra':
+    metro: 'Mumbai'
+    lat: 19.018936
+    lon: 72.855043
+    bbox: {lat_min: 18.0139, lat_max: 20.0239, lon_min: 71.85, lon_max: 73.86}
+    reason: 'largest populated place in state (Natural Earth pop_max=18978000)'
+  'IN-Manipur':
+    metro: 'Imphal'
+    lat: 24.799971
+    lon: 93.950017
+    bbox: {lat_min: 23.795, lat_max: 25.805, lon_min: 92.945, lon_max: 94.955}
+    reason: 'largest populated place in state (Natural Earth pop_max=264986)'
+  'IN-Meghalaya':
+    metro: 'Shillong'
+    lat: 25.570492
+    lon: 91.880014
+    bbox: {lat_min: 24.5655, lat_max: 26.5755, lon_min: 90.875, lon_max: 92.885}
+    reason: 'largest populated place in state (Natural Earth pop_max=375527)'
+  'IN-Mizoram':
+    metro: 'Aizawl'
+    lat: 23.710399
+    lon: 92.720015
+    bbox: {lat_min: 22.7054, lat_max: 24.7154, lon_min: 91.715, lon_max: 93.725}
+    reason: 'largest populated place in state (Natural Earth pop_max=283021)'
+  'IN-Nagaland':
+    metro: 'Kohima'
+    lat: 25.666998
+    lon: 94.11657
+    bbox: {lat_min: 24.662, lat_max: 26.672, lon_min: 93.1116, lon_max: 95.1216}
+    reason: 'largest populated place in state (Natural Earth pop_max=92113)'
+  'IN-Odisha':
+    metro: 'Bhubaneswar'
+    lat: 20.272374
+    lon: 85.825415
+    bbox: {lat_min: 19.2674, lat_max: 21.2774, lon_min: 84.8204, lon_max: 86.8304}
+    reason: 'largest populated place in state (Natural Earth pop_max=844000)'
+  'IN-Punjab':
+    metro: 'Ludhiana'
+    lat: 30.929708
+    lon: 75.870312
+    bbox: {lat_min: 29.9247, lat_max: 31.9347, lon_min: 74.8653, lon_max: 76.8753}
+    reason: 'largest populated place in state (Natural Earth pop_max=1649000)'
+  'IN-Rajasthan':
+    metro: 'Jaipur'
+    lat: 26.923079
+    lon: 75.808042
+    bbox: {lat_min: 25.9181, lat_max: 27.9281, lon_min: 74.803, lon_max: 76.813}
+    reason: 'largest populated place in state (Natural Earth pop_max=2917000)'
+  'IN-Sikkim':
+    metro: 'Gangtok'
+    lat: 27.33333
+    lon: 88.616648
+    bbox: {lat_min: 26.3283, lat_max: 28.3383, lon_min: 87.6116, lon_max: 89.6216}
+    reason: 'largest populated place in state (Natural Earth pop_max=77900)'
+  'IN-Tamil Nadu':
+    metro: 'Chennai'
+    lat: 13.091934
+    lon: 80.278053
+    bbox: {lat_min: 12.0869, lat_max: 14.0969, lon_min: 79.2731, lon_max: 81.2831}
+    reason: 'largest populated place in state (Natural Earth pop_max=7163000)'
+  'IN-Telangana':
+    metro: 'Hyderabad'
+    lat: 17.401929
+    lon: 78.478008
+    bbox: {lat_min: 16.3969, lat_max: 18.4069, lon_min: 77.473, lon_max: 79.483}
+    reason: 'largest populated place in state (Natural Earth pop_max=6376000)'
+  'IN-Tripura':
+    metro: 'Agartala'
+    lat: 23.835404
+    lon: 91.279999
+    bbox: {lat_min: 22.8304, lat_max: 24.8404, lon_min: 90.275, lon_max: 92.285}
+    reason: 'largest populated place in state (Natural Earth pop_max=203264)'
+  'IN-Uttar Pradesh':
+    metro: 'Kanpur'
+    lat: 26.461945
+    lon: 80.31805
+    bbox: {lat_min: 25.4569, lat_max: 27.4669, lon_min: 79.3131, lon_max: 81.323}
+    reason: 'largest populated place in state (Natural Earth pop_max=3162000)'
+  'IN-West Bengal':
+    metro: 'Kolkata'
+    lat: 22.496915
+    lon: 88.32273
+    bbox: {lat_min: 21.4919, lat_max: 23.5019, lon_min: 87.3177, lon_max: 89.3277}
+    reason: 'largest populated place in state (Natural Earth pop_max=14787000)'
+  'US-Alabama':
+    metro: 'Birmingham'
+    lat: 33.530006
+    lon: -86.824995
+    bbox: {lat_min: 32.525, lat_max: 34.535, lon_min: -87.83, lon_max: -85.82}
+    reason: 'largest populated place in state (Natural Earth pop_max=1128047)'
+  'US-Alaska':
+    metro: 'Anchorage'
+    lat: 61.21997
+    lon: -149.900215
+    bbox: {lat_min: 60.215, lat_max: 62.225, lon_min: -150.9052, lon_max: -148.8952}
+    reason: 'largest populated place in state (Natural Earth pop_max=260283)'
+  'US-Arizona':
+    metro: 'Phoenix'
+    lat: 33.541926
+    lon: -112.071938
+    bbox: {lat_min: 32.5369, lat_max: 34.5469, lon_min: -113.0769, lon_max: -111.0669}
+    reason: 'largest populated place in state (Natural Earth pop_max=3551000)'
+  'US-Arkansas':
+    metro: 'Little Rock'
+    lat: 34.736083
+    lon: -92.331093
+    bbox: {lat_min: 33.7311, lat_max: 35.7411, lon_min: -93.3361, lon_max: -91.3261}
+    reason: 'largest populated place in state (Natural Earth pop_max=270893)'
+  'US-California':
+    metro: 'Los Angeles'
+    lat: 33.991924
+    lon: -118.181926
+    bbox: {lat_min: 32.9869, lat_max: 34.9969, lon_min: -119.1869, lon_max: -117.1769}
+    reason: 'largest populated place in state (Natural Earth pop_max=12500000)'
+  'US-Colorado':
+    metro: 'Denver'
+    lat: 39.741134
+    lon: -104.985962
+    bbox: {lat_min: 38.7361, lat_max: 40.7461, lon_min: -105.991, lon_max: -103.981}
+    reason: 'largest populated place in state (Natural Earth pop_max=2313000)'
+  'US-Connecticut':
+    metro: 'Bridgeport'
+    lat: 41.181925
+    lon: -73.201907
+    bbox: {lat_min: 40.1769, lat_max: 42.1869, lon_min: -74.2069, lon_max: -72.1969}
+    reason: 'largest populated place in state (Natural Earth pop_max=1018000)'
+  'US-Delaware':
+    metro: 'Wilmington'
+    lat: 39.746268
+    lon: -75.546898
+    bbox: {lat_min: 38.7413, lat_max: 40.7513, lon_min: -76.5519, lon_max: -74.5419}
+    reason: 'largest populated place in state (Natural Earth pop_max=161560)'
+  'US-District of Columbia':
+    metro: 'Washington,  D.C.'
+    lat: 38.901495
+    lon: -77.011364
+    bbox: {lat_min: 37.8965, lat_max: 39.9065, lon_min: -78.0164, lon_max: -76.0064}
+    reason: 'largest populated place in state (Natural Earth pop_max=4338000)'
+  'US-Florida':
+    metro: 'Miami'
+    lat: 25.789557
+    lon: -80.226052
+    bbox: {lat_min: 24.7846, lat_max: 26.7946, lon_min: -81.2311, lon_max: -79.2211}
+    reason: 'largest populated place in state (Natural Earth pop_max=5585000)'
+  'US-Georgia':
+    metro: 'Atlanta'
+    lat: 33.83196
+    lon: -84.401895
+    bbox: {lat_min: 32.827, lat_max: 34.837, lon_min: -85.4069, lon_max: -83.3969}
+    reason: 'largest populated place in state (Natural Earth pop_max=4506000)'
+  'US-Hawaii':
+    metro: 'Honolulu'
+    lat: 21.308822
+    lon: -157.859944
+    bbox: {lat_min: 20.3038, lat_max: 22.3138, lon_min: -158.8649, lon_max: -156.8549}
+    reason: 'largest populated place in state (Natural Earth pop_max=786000)'
+  'US-Idaho':
+    metro: 'Boise'
+    lat: 43.60859
+    lon: -116.22749
+    bbox: {lat_min: 42.6036, lat_max: 44.6136, lon_min: -117.2325, lon_max: -115.2225}
+    reason: 'largest populated place in state (Natural Earth pop_max=338071)'
+  'US-Illinois':
+    metro: 'Chicago'
+    lat: 41.831937
+    lon: -87.752001
+    bbox: {lat_min: 40.8269, lat_max: 42.8369, lon_min: -88.757, lon_max: -86.747}
+    reason: 'largest populated place in state (Natural Earth pop_max=8990000)'
+  'US-Indiana':
+    metro: 'Indianapolis'
+    lat: 39.751934
+    lon: -86.171994
+    bbox: {lat_min: 38.7469, lat_max: 40.7569, lon_min: -87.177, lon_max: -85.167}
+    reason: 'largest populated place in state (Natural Earth pop_max=1436000)'
+  'US-Iowa':
+    metro: 'Des Moines'
+    lat: 41.57998
+    lon: -93.619981
+    bbox: {lat_min: 40.575, lat_max: 42.585, lon_min: -94.625, lon_max: -92.615}
+    reason: 'largest populated place in state (Natural Earth pop_max=380655)'
+  'US-Kansas':
+    metro: 'Kansas City'
+    lat: 39.113581
+    lon: -94.630146
+    bbox: {lat_min: 38.1086, lat_max: 40.1186, lon_min: -95.6351, lon_max: -93.6251}
+    reason: 'largest populated place in state (Natural Earth pop_max=501577)'
+  'US-Kentucky':
+    metro: 'Louisville'
+    lat: 38.226963
+    lon: -85.75065
+    bbox: {lat_min: 37.222, lat_max: 39.232, lon_min: -86.7556, lon_max: -84.7456}
+    reason: 'largest populated place in state (Natural Earth pop_max=948000)'
+  'US-Louisiana':
+    metro: 'New Orleans'
+    lat: 29.996948
+    lon: -90.041913
+    bbox: {lat_min: 28.9919, lat_max: 31.0019, lon_min: -91.0469, lon_max: -89.0369}
+    reason: 'largest populated place in state (Natural Earth pop_max=785000)'
+  'US-Maine':
+    metro: 'Lewiston'
+    lat: 44.100705
+    lon: -70.21526
+    bbox: {lat_min: 43.0957, lat_max: 45.1057, lon_min: -71.2203, lon_max: -69.2103}
+    reason: 'largest populated place in state (Natural Earth pop_max=57688)'
+  'US-Maryland':
+    metro: 'Baltimore'
+    lat: 39.301936
+    lon: -76.621931
+    bbox: {lat_min: 38.2969, lat_max: 40.3069, lon_min: -77.6269, lon_max: -75.6169}
+    reason: 'largest populated place in state (Natural Earth pop_max=2255000)'
+  'US-Massachusetts':
+    metro: 'Boston'
+    lat: 42.331906
+    lon: -71.07196
+    bbox: {lat_min: 41.3269, lat_max: 43.3369, lon_min: -72.077, lon_max: -70.067}
+    reason: 'largest populated place in state (Natural Earth pop_max=4467000)'
+  'US-Michigan':
+    metro: 'Detroit'
+    lat: 42.331906
+    lon: -83.082002
+    bbox: {lat_min: 41.3269, lat_max: 43.3369, lon_min: -84.087, lon_max: -82.077}
+    reason: 'largest populated place in state (Natural Earth pop_max=4101000)'
+  'US-Minnesota':
+    metro: 'Minneapolis'
+    lat: 44.981925
+    lon: -93.253732
+    bbox: {lat_min: 43.9769, lat_max: 45.9869, lon_min: -94.2587, lon_max: -92.2487}
+    reason: 'largest populated place in state (Natural Earth pop_max=2616000)'
+  'US-Mississippi':
+    metro: 'Jackson'
+    lat: 32.298815
+    lon: -90.184997
+    bbox: {lat_min: 31.2938, lat_max: 33.3038, lon_min: -91.19, lon_max: -89.18}
+    reason: 'largest populated place in state (Natural Earth pop_max=250902)'
+  'US-Missouri':
+    metro: 'St. Louis'
+    lat: 38.636964
+    lon: -90.241926
+    bbox: {lat_min: 37.632, lat_max: 39.642, lon_min: -91.2469, lon_max: -89.2369}
+    reason: 'largest populated place in state (Natural Earth pop_max=2199000)'
+  'US-Montana':
+    metro: 'Billings'
+    lat: 45.788302
+    lon: -108.54
+    bbox: {lat_min: 44.7833, lat_max: 46.7933, lon_min: -109.545, lon_max: -107.535}
+    reason: 'largest populated place in state (Natural Earth pop_max=104552)'
+  'US-Nebraska':
+    metro: 'Omaha'
+    lat: 41.240001
+    lon: -96.00999
+    bbox: {lat_min: 40.235, lat_max: 42.245, lon_min: -97.015, lon_max: -95.005}
+    reason: 'largest populated place in state (Natural Earth pop_max=877110)'
+  'US-Nevada':
+    metro: 'Las Vegas'
+    lat: 36.211944
+    lon: -115.221952
+    bbox: {lat_min: 35.2069, lat_max: 37.2169, lon_min: -116.227, lon_max: -114.217}
+    reason: 'largest populated place in state (Natural Earth pop_max=1823000)'
+  'US-New Hampshire':
+    metro: 'Manchester'
+    lat: 42.995992
+    lon: -71.455287
+    bbox: {lat_min: 41.991, lat_max: 44.001, lon_min: -72.4603, lon_max: -70.4503}
+    reason: 'largest populated place in state (Natural Earth pop_max=196566)'
+  'US-New Jersey':
+    metro: 'Trenton'
+    lat: 40.216963
+    lon: -74.743355
+    bbox: {lat_min: 39.212, lat_max: 41.222, lon_min: -75.7484, lon_max: -73.7384}
+    reason: 'largest populated place in state (Natural Earth pop_max=366513)'
+  'US-New Mexico':
+    metro: 'Albuquerque'
+    lat: 35.104975
+    lon: -106.641331
+    bbox: {lat_min: 34.1, lat_max: 36.11, lon_min: -107.6463, lon_max: -105.6363}
+    reason: 'largest populated place in state (Natural Earth pop_max=898642)'
+  'US-New York':
+    metro: 'Buffalo'
+    lat: 42.881924
+    lon: -78.881948
+    bbox: {lat_min: 41.8769, lat_max: 43.8869, lon_min: -79.8869, lon_max: -77.8769}
+    reason: 'largest populated place in state (Natural Earth pop_max=1016000)'
+  'US-North Carolina':
+    metro: 'Raleigh'
+    lat: 35.818781
+    lon: -78.644693
+    bbox: {lat_min: 34.8138, lat_max: 36.8238, lon_min: -79.6497, lon_max: -77.6397}
+    reason: 'largest populated place in state (Natural Earth pop_max=1163515)'
+  'US-North Dakota':
+    metro: 'Fargo'
+    lat: 46.877228
+    lon: -96.789426
+    bbox: {lat_min: 45.8722, lat_max: 47.8822, lon_min: -97.7944, lon_max: -95.7844}
+    reason: 'largest populated place in state (Natural Earth pop_max=162842)'
+  'US-Ohio':
+    metro: 'Cleveland'
+    lat: 41.471933
+    lon: -81.696944
+    bbox: {lat_min: 40.4669, lat_max: 42.4769, lon_min: -82.7019, lon_max: -80.6919}
+    reason: 'largest populated place in state (Natural Earth pop_max=1890000)'
+  'US-Oklahoma':
+    metro: 'Tulsa'
+    lat: 36.120003
+    lon: -95.930021
+    bbox: {lat_min: 35.115, lat_max: 37.125, lon_min: -96.935, lon_max: -94.925}
+    reason: 'largest populated place in state (Natural Earth pop_max=946962)'
+  'US-Oregon':
+    metro: 'Portland'
+    lat: 45.52197
+    lon: -122.681936
+    bbox: {lat_min: 44.517, lat_max: 46.527, lon_min: -123.6869, lon_max: -121.6769}
+    reason: 'largest populated place in state (Natural Earth pop_max=1875000)'
+  'US-Pennsylvania':
+    metro: 'Philadelphia'
+    lat: 40.001919
+    lon: -75.171942
+    bbox: {lat_min: 38.9969, lat_max: 41.0069, lon_min: -76.1769, lon_max: -74.1669}
+    reason: 'largest populated place in state (Natural Earth pop_max=5492000)'
+  'US-Rhode Island':
+    metro: 'Providence'
+    lat: 41.823048
+    lon: -71.416926
+    bbox: {lat_min: 40.818, lat_max: 42.828, lon_min: -72.4219, lon_max: -70.4119}
+    reason: 'largest populated place in state (Natural Earth pop_max=1277000)'
+  'US-South Carolina':
+    metro: 'Charleston'
+    lat: 32.792377
+    lon: -79.992105
+    bbox: {lat_min: 31.7874, lat_max: 33.7974, lon_min: -80.9971, lon_max: -78.9871}
+    reason: 'largest populated place in state (Natural Earth pop_max=411940)'
+  'US-South Dakota':
+    metro: 'Sioux Falls'
+    lat: 43.549989
+    lon: -96.729998
+    bbox: {lat_min: 42.545, lat_max: 44.555, lon_min: -97.735, lon_max: -95.725}
+    reason: 'largest populated place in state (Natural Earth pop_max=155724)'
+  'US-Tennessee':
+    metro: 'Memphis'
+    lat: 35.121933
+    lon: -90.001941
+    bbox: {lat_min: 34.1169, lat_max: 36.1269, lon_min: -91.0069, lon_max: -88.9969}
+    reason: 'largest populated place in state (Natural Earth pop_max=1081000)'
+  'US-Texas':
+    metro: 'Houston'
+    lat: 29.7604
+    lon: -95.3698
+    bbox: {lat_min: 28.7554, lat_max: 30.7654, lon_min: -96.3748, lon_max: -94.3648}
+    reason: 'specified anchor (Houston): major heat-exposed Texas metro'
+  'US-Utah':
+    metro: 'Salt Lake City'
+    lat: 40.776962
+    lon: -111.931998
+    bbox: {lat_min: 39.772, lat_max: 41.782, lon_min: -112.937, lon_max: -110.927}
+    reason: 'largest populated place in state (Natural Earth pop_max=966000)'
+  'US-Vermont':
+    metro: 'Burlington'
+    lat: 44.475798
+    lon: -73.212467
+    bbox: {lat_min: 43.4708, lat_max: 45.4808, lon_min: -74.2175, lon_max: -72.2075}
+    reason: 'largest populated place in state (Natural Earth pop_max=93807)'
+  'US-Virginia':
+    metro: 'Virginia Beach'
+    lat: 36.85516
+    lon: -75.980265
+    bbox: {lat_min: 35.8502, lat_max: 37.8602, lon_min: -76.9853, lon_max: -74.9753}
+    reason: 'largest populated place in state (Natural Earth pop_max=1491000)'
+  'US-Washington':
+    metro: 'Seattle'
+    lat: 47.571948
+    lon: -122.341931
+    bbox: {lat_min: 46.5669, lat_max: 48.5769, lon_min: -123.3469, lon_max: -121.3369}
+    reason: 'largest populated place in state (Natural Earth pop_max=3074000)'
+  'US-West Virginia':
+    metro: 'Charleston'
+    lat: 38.349738
+    lon: -81.632728
+    bbox: {lat_min: 37.3447, lat_max: 39.3547, lon_min: -82.6377, lon_max: -80.6277}
+    reason: 'largest populated place in state (Natural Earth pop_max=123799)'
+  'US-Wisconsin':
+    metro: 'Milwaukee'
+    lat: 43.054601
+    lon: -87.921913
+    bbox: {lat_min: 42.0496, lat_max: 44.0596, lon_min: -88.9269, lon_max: -86.9169}
+    reason: 'largest populated place in state (Natural Earth pop_max=1388000)'
+  'US-Wyoming':
+    metro: 'Cheyenne'
+    lat: 41.140007
+    lon: -104.819711
+    bbox: {lat_min: 40.135, lat_max: 42.145, lon_min: -105.8247, lon_max: -103.8147}
+    reason: 'largest populated place in state (Natural Earth pop_max=72927)'

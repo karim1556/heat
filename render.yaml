@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: pricing-heat-api
+    runtime: docker
+    plan: free            # or starter for 24/7 (free tier sleeps after inactivity)
+    dockerfilePath: infra/backend.Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    # PORT is NOT declared here -- Render injects it automatically into every
+    # web service's container at runtime; declaring it as an envVar (even
+    # with sync: false) risks Render prompting for a manual value during
+    # Blueprint deploy, which would block on a variable that's already set.
+    envVars:
+      - key: FRONTEND_ORIGIN
+        sync: false
+        # Set to the deployed pricing-heat-web URL after its first deploy
+        # (e.g. https://pricing-heat-web.onrender.com). Until set, CORS
+        # requests from the frontend will be rejected -- this is
+        # deliberately NOT defaulted to "*" now that a real frontend service
+        # exists to point at.
+
+  - type: web
+    name: pricing-heat-web
+    runtime: node
+    rootDir: frontend
+    plan: free            # or starter for 24/7 (free tier sleeps after inactivity)
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    # PORT is NOT declared here either -- Render injects it, and
+    # frontend/package.json's "start" script (`next start -p ${PORT:-3000}`)
+    # honors it explicitly.
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        sync: false
+        # Set to the deployed pricing-heat-api URL (e.g.
+        # https://pricing-heat-api.onrender.com). NEXT_PUBLIC_ vars are
+        # inlined at BUILD time, so this must be set BEFORE the first build,
+        # not just at runtime -- changing it later requires a rebuild.

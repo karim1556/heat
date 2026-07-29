@@ -1,0 +1,110 @@
+# City configuration for the Pricing the Heat pipeline.
+#
+# bbox: real NASA POWER regional-API bounding box. POWER's regional endpoint
+# requires >= 2 degree spans in both latitude and longitude (verified against
+# the live API 2026-07-17); a single city center is therefore widened to a
+# ~2deg x 2deg metro bbox to yield multiple real grid cells (node count is
+# data-driven downstream, never hardcoded).
+#
+# occupations.*.baseline_daily_wage: cited from the Minimum Wages Act, 1948
+# notification issued by the Labour & Employment Department, Government of
+# Gujarat (Zone I / Ahmedabad Municipal Corporation area rates). This is a
+# manually-curated CITED constant, not an API-fetched value (World Bank
+# Indicators give labor-structure shares, not currency wage levels -- see
+# backend/data/wages.py). `verified: false` is the honest default: the agent
+# that curated this figure cannot confirm it against the live government
+# notification. A HUMAN must check the source_url and flip verified: true --
+# never the agent. Run `python -m backend.data.verify_wages` to see exactly
+# what needs checking.
+
+default_city: ahmedabad
+
+# CHOSEN CONTRACT (Prompt 6b), the single source of truth both the backtest
+# (backend/backtest/historical_replay.py, via models/pricing/lsmc_pricer.py's
+# DEFAULT_STRIKE/DEFAULT_HORIZON) and the API (backend/main.py) read -- never
+# hardcode strike/window separately in either place, or the two can silently
+# drift apart.
+#
+# Selected on the real historical replay by backend/backtest/contract_design.py's
+# strike/window sweep (see notebooks/artifacts/backtest_report.md, "Contract
+# Design" section, and notebooks/artifacts/contract_design_sweep.csv for the
+# full grid). The honesty gate found 0 of 36 grid points behave like
+# catastrophe insurance -- outdoor workers lose wages on ~66% of worker-days, a
+# chronic/high-frequency peril, not a rare catastrophe -- so the product is
+# honestly framed as high-frequency INCOME SMOOTHING (never "catastrophe
+# insurance" in any user-facing string). strike=75 minimizes the index bias
+# (|shortfall_rate - overpay_rate|, an unbiased index); window=14 then
+# maximizes genuine risk transfer (lowest premium/cap) among ties.
+contract:
+  strike: 75
+  window_days: 14
+  product_type: income_smoothing
+
+cities:
+  ahmedabad:
+    name: Ahmedabad
+    country_iso3: IND
+    context: >
+      Ahmedabad, Gujarat -- site of South Asia's first Heat Action Plan
+      (Ahmedabad Heat Action Plan, launched 2013 by Ahmedabad Municipal
+      Corporation with NRDC and IIPH-Gandhinagar), making it a strong,
+      real-world anchor city for a heatwave wage-loss pricing model.
+    lat: 23.0225
+    lon: 72.5714
+    bbox:
+      lat_min: 22.0
+      lat_max: 24.0
+      lon_min: 71.5
+      lon_max: 73.5
+    occupations:
+      vendor:
+        baseline_daily_wage:
+          value: 368.0
+          currency: INR
+          source_name: >
+            Minimum Wages Act, 1948 notification (unskilled, Zone I) --
+            Labour & Employment Department, Government of Gujarat
+          source_url: "https://labour.gujarat.gov.in"
+          effective_date: "2023-10"
+          verified: false
+          verification_note: >
+            Figure reflects the general unskilled-worker Zone I rate range
+            cited in Gujarat minimum-wage notifications; confirm against the
+            current live Government Resolution (GR) -- VDA is revised
+            periodically -- before external use. A human must flip
+            verified: true after confirming; the agent cannot self-verify.
+      construction:
+        baseline_daily_wage:
+          value: 406.0
+          currency: INR
+          source_name: >
+            Minimum Wages Act, 1948 notification (Building & Construction
+            scheduled employment, semi-skilled) -- Labour & Employment
+            Department, Government of Gujarat
+          source_url: "https://labour.gujarat.gov.in"
+          effective_date: "2023-10"
+          verified: false
+          verification_note: >
+            Figure reflects the general semi-skilled construction-sector rate
+            range cited in Gujarat minimum-wage notifications; confirm
+            against the current live Government Resolution (GR) -- VDA is
+            revised periodically -- before external use. A human must flip
+            verified: true after confirming; the agent cannot self-verify.
+      delivery:
+        baseline_daily_wage:
+          value: 387.0
+          currency: INR
+          source_name: >
+            Minimum Wages Act, 1948 notification (semi-skilled, Zone I) --
+            Labour & Employment Department, Government of Gujarat
+          source_url: "https://labour.gujarat.gov.in"
+          effective_date: "2023-10"
+          verified: false
+          verification_note: >
+            Figure reflects the general semi-skilled Zone I rate range cited
+            in Gujarat minimum-wage notifications (proxy for gig/delivery
+            work, which is not yet its own scheduled employment category);
+            confirm against the current live Government Resolution (GR) --
+            VDA is revised periodically -- before external use. A human must
+            flip verified: true after confirming; the agent cannot
+            self-verify.

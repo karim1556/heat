@@ -1,0 +1,172 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 20000,
+    "total": 66,
+    "sourceid": "2",
+    "lastupdated": "2026-07-13"
+  },
+  [
+    {
+      "indicator": {
+        "id": "SL.EMP.WORK.ZS",
+        "value": "Wage and salaried workers, total (% of total employment) (modeled ILO estimate)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2025",
+      "value": 25.0968991206297,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SL.EMP.WORK.ZS",
+        "value": "Wage and salaried workers, total (% of total employment) (modeled ILO estimate)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2024",
+      "value": 24.605844538728,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SL.EMP.WORK.ZS",
+        "value": "Wage and salaried workers, total (% of total employment) (modeled ILO estimate)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2023",
+      "value": 23.8734130526665,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SL.EMP.WORK.ZS",
+        "value": "Wage and salaried workers, total (% of total employment) (modeled ILO estimate)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2022",
+      "value": 23.1304436080318,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SL.EMP.WORK.ZS",
+        "value": "Wage and salaried workers, total (% of total employment) (modeled ILO estimate)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2021",
+      "value": 23.3458977405958,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SL.EMP.WORK.ZS",
+        "value": "Wage and salaried workers, total (% of total employment) (modeled ILO estimate)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2020",
+      "value": 22.7981662885246,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SL.EMP.WORK.ZS",
+        "value": "Wage and salaried workers, total (% of total employment) (modeled ILO estimate)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2019",
+      "value": 22.7744331809652,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SL.EMP.WORK.ZS",
+        "value": "Wage and salaried workers, total (% of total employment) (modeled ILO estimate)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2018",
+      "value": 22.2149620632483,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SL.EMP.WORK.ZS",
+        "value": "Wage and salaried workers, total (% of total employment) (modeled ILO estimate)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2017",
+      "value": 21.6180190130378,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "SL.EMP.WORK.ZS",
+        "value": "Wage and salaried workers, total (% of total employment) (modeled ILO estimate)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2016",
+      "value": 21.0290355553004,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

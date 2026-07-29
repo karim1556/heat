@@ -1,0 +1,7 @@
+--index-url https://download.pytorch.org/whl/cpu
+# PINNED (not >=2.2): seed-42 STGCN/PPO determinism is torch-version-dependent,
+# and the committed reference artifacts (e.g. Phoenix held-out MAE 1.4212 degC)
+# reproduce bit-exactly only on 2.2.2. An unpinned floor let `make install`/CI
+# silently resolve to a newer torch and stop matching, undetected. Bump this
+# deliberately, re-running the reproducibility checks, never by accident.
+torch==2.2.2

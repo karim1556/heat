@@ -1,0 +1,69 @@
+{
+  "theta": 1.428775173367468,
+  "gev_params": {
+    "c": 0.36049014135793433,
+    "loc": 13.448317191705055,
+    "scale": 7.598612958490451
+  },
+  "hurdle": {
+    "p0": 0.8663061336254108,
+    "positive_dist": "beta",
+    "positive_params": [
+      0.8421846617037267,
+      462.2106553530524,
+      0.014818256906547532,
+      13.342157838045097
+    ],
+    "n_zero_atom": 37965,
+    "n_positive": 5859,
+    "positive_dist_selected_by": "lower AIC",
+    "positive_aic": {
+      "beta": -31933.862087101705,
+      "gamma": -31933.763323450985
+    }
+  },
+  "tau_convention": "0.1*wage",
+  "theta_naive_vs_hurdle_delta": -1.6606394901969634,
+  "theta_naive": 3.0894146635644315,
+  "atom_attenuation": {
+    "factor": 0.8474208130858893,
+    "theta_hurdle_attenuation_corrected": 1.6860279465695118,
+    "theta_naive_vs_hurdle_delta_attenuation_adjusted": -1.4033867169949197,
+    "note": "The raw theta_naive_vs_hurdle_delta conflates TWO effects: (a) the real correction from restoring the cited-zero atom, and (b) attenuation, because an atom destroys the ordering information inside it so theta fitted on hurdle pseudo-observations is biased toward independence (Genest & Neslehova 2007: the copula is not uniquely identified under ties). The factor here is measured by simulation at the fitted (theta, p0). Quote the attenuation-adjusted delta as 'the cost of Prompt 3's smearing', NOT the raw one."
+  },
+  "upper_tail_dependence": 0.37560760361043966,
+  "upper_tail_dependence_naive": 0.7484760401229171,
+  "kendall_tau": 0.3000998207134937,
+  "tau_convention_note": "kappa/gamma from Prompt 3's calibration are CONDITIONAL on the fixed logit choice-noise scale tau = 0.1*wage. (kappa, gamma, tau) are jointly non-identified from a single choice curve; a different tau describes the same curve with different kappa/gamma. Do not treat kappa/gamma as free-standing physical constants.",
+  "pairing": {
+    "trigger": "city-level daily max shade-WBGT (spatial block maximum)",
+    "loss": "hurdle-corrected wage loss at the worker's own node, occupations equal-weighted",
+    "models": "spatial basis risk between the parametric trigger and the worker's actual loss",
+    "why_not_own_node_heat": "Prompt 3's calibration makes loss a deterministic monotone function of WBGT (measured spearman = 1.0000000000 exactly per occupation), so pairing a node's own heat with its own loss is exactly comonotone: theta diverges and the copula is vacuous."
+  },
+  "tie_handling": "distributional transform (Rueschendorf); mid-rank reported as robustness",
+  "where_the_smearing_bites": {
+    "p_zero_loss_hurdle": 0.8663061336254108,
+    "p_zero_loss_naive": 0.0,
+    "note": "The smearing's expensive error is in the MARGINAL, not the dependence. The naive single-piece F_L gives ~0 probability to a zero-loss day when 33.5% of real node-days have exactly zero cited loss; that drives payout probability on a third of the calendar. Net of attenuation, theta itself barely moves."
+  },
+  "robustness": {
+    "theta_empirical_ranks": 1.9610607268607505,
+    "theta_mid_rank_ties": 1.7356333842553502,
+    "theta_from_empirical_tau_moment": 1.9266013624195493,
+    "kendall_tau_empirical": 0.4809512650068222,
+    "note": "theta via distributional transform and via empirical ranks agree closely, which shows the imperfect GEV does NOT drive theta (rank-based pseudo-obs are immune to marginal misspecification). The mid-rank and tau_b figures DIVERGE, which is expected rather than reassuring: under ties the copula is not uniquely identified, so theta is conditional on the stated tie convention."
+  },
+  "gev_fit_quality": {
+    "ks": 0.07589013439159548,
+    "ks_critical_5pct": 0.022504715338930836,
+    "ks_rejects_at_5pct": true,
+    "best_by_aic": "genextreme",
+    "caveat": "The daily city max is strongly seasonal, so its unconditional law is a seasonal mixture, not a single GEV. GEV is the best available family, not a good absolute fit."
+  },
+  "spatial_honesty": "STGCN vs same-timestep IDW: -255.2%; vs information-matched IDW: +16.4%. The spatial component is a mild refinement over trivial interpolation, NOT learned geography, and is not weighted as an independent signal.",
+  "hurdle_sampling_recipe_for_prompt5": "Draw (u,v) from GumbelSurvivalCopula(theta).sample(); h = genextreme.ppf(u, *gev_params); l = HurdleMarginal.ppf(v) -> EXACTLY 0 when v <= p0, else beta.ppf((v-p0)/(1-p0), *positive_params). Never sample a single continuous distribution over [0, max]: that reintroduces the ~2.4% smeared floor and misprices every zero-loss day (~a third of them).",
+  "seed": 42,
+  "n_node_days": 43824,
+  "independence_caveat": "The 43824 node-days are not independent (12 nodes share each day's trigger, spatial correlation >0.998); this is a composite pseudo-likelihood. theta is consistent; its standard error is understated."
+}

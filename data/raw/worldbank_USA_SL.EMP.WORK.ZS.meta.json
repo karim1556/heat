@@ -1,0 +1,8 @@
+{
+  "source_url": "https://api.worldbank.org/v2/country/USA/indicator/SL.EMP.WORK.ZS",
+  "fetched_at_utc": "2026-07-22T18:25:11.491399+00:00",
+  "query_params": {
+    "format": "json",
+    "per_page": 20000
+  }
+}

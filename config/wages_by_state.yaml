@@ -1,0 +1,1145 @@
+meta:
+  conversion_us: hourly x 8 h/day = daily USD; effective = max(state, federal 7.25)
+  conversion_india: monthly / 26 working days = daily INR
+  occupation_mapping: vendor & delivery = base unskilled daily; construction = base
+    x 1.12 (semi-skilled uplift, labeled)
+  verified: ALL entries verified:false - confirm against official source before public
+    pricing
+  source_us: https://www.dol.gov/agencies/whd/minimum-wage/state
+  source_india: respective State Labour Department minimum wage notifications
+states:
+  US-Alabama:
+    country: US
+    state: Alabama
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: federal floor (no state minimum)
+  US-Alaska:
+    country: US
+    state: Alaska
+    currency: USD
+    basis_hourly: 11.73
+    effective_hourly: 11.73
+    wages_daily:
+      vendor: 93.84
+      delivery: 93.84
+      construction: 105.1
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Arizona:
+    country: US
+    state: Arizona
+    currency: USD
+    basis_hourly: 14.35
+    effective_hourly: 14.35
+    wages_daily:
+      vendor: 114.8
+      delivery: 114.8
+      construction: 128.58
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Arkansas:
+    country: US
+    state: Arkansas
+    currency: USD
+    basis_hourly: 11.5
+    effective_hourly: 11.5
+    wages_daily:
+      vendor: 92.0
+      delivery: 92.0
+      construction: 103.04
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-California:
+    country: US
+    state: California
+    currency: USD
+    basis_hourly: 16.5
+    effective_hourly: 16.5
+    wages_daily:
+      vendor: 132.0
+      delivery: 132.0
+      construction: 147.84
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Colorado:
+    country: US
+    state: Colorado
+    currency: USD
+    basis_hourly: 14.42
+    effective_hourly: 14.42
+    wages_daily:
+      vendor: 115.36
+      delivery: 115.36
+      construction: 129.2
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Connecticut:
+    country: US
+    state: Connecticut
+    currency: USD
+    basis_hourly: 16.94
+    effective_hourly: 16.94
+    wages_daily:
+      vendor: 135.52
+      delivery: 135.52
+      construction: 151.78
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Delaware:
+    country: US
+    state: Delaware
+    currency: USD
+    basis_hourly: 13.25
+    effective_hourly: 13.25
+    wages_daily:
+      vendor: 106.0
+      delivery: 106.0
+      construction: 118.72
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-District of Columbia:
+    country: US
+    state: District of Columbia
+    currency: USD
+    basis_hourly: 18.4
+    effective_hourly: 18.4
+    wages_daily:
+      vendor: 147.2
+      delivery: 147.2
+      construction: 164.86
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Florida:
+    country: US
+    state: Florida
+    currency: USD
+    basis_hourly: 13.0
+    effective_hourly: 13.0
+    wages_daily:
+      vendor: 104.0
+      delivery: 104.0
+      construction: 116.48
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Georgia:
+    country: US
+    state: Georgia
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state rate below federal; federal applies
+  US-Hawaii:
+    country: US
+    state: Hawaii
+    currency: USD
+    basis_hourly: 14.0
+    effective_hourly: 14.0
+    wages_daily:
+      vendor: 112.0
+      delivery: 112.0
+      construction: 125.44
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Idaho:
+    country: US
+    state: Idaho
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Illinois:
+    country: US
+    state: Illinois
+    currency: USD
+    basis_hourly: 14.0
+    effective_hourly: 14.0
+    wages_daily:
+      vendor: 112.0
+      delivery: 112.0
+      construction: 125.44
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Indiana:
+    country: US
+    state: Indiana
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Iowa:
+    country: US
+    state: Iowa
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Kansas:
+    country: US
+    state: Kansas
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Kentucky:
+    country: US
+    state: Kentucky
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Louisiana:
+    country: US
+    state: Louisiana
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: federal floor (no state minimum)
+  US-Maine:
+    country: US
+    state: Maine
+    currency: USD
+    basis_hourly: 14.15
+    effective_hourly: 14.15
+    wages_daily:
+      vendor: 113.2
+      delivery: 113.2
+      construction: 126.78
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Maryland:
+    country: US
+    state: Maryland
+    currency: USD
+    basis_hourly: 15.0
+    effective_hourly: 15.0
+    wages_daily:
+      vendor: 120.0
+      delivery: 120.0
+      construction: 134.4
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Massachusetts:
+    country: US
+    state: Massachusetts
+    currency: USD
+    basis_hourly: 15.0
+    effective_hourly: 15.0
+    wages_daily:
+      vendor: 120.0
+      delivery: 120.0
+      construction: 134.4
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Michigan:
+    country: US
+    state: Michigan
+    currency: USD
+    basis_hourly: 10.33
+    effective_hourly: 10.33
+    wages_daily:
+      vendor: 82.64
+      delivery: 82.64
+      construction: 92.56
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Minnesota:
+    country: US
+    state: Minnesota
+    currency: USD
+    basis_hourly: 11.11
+    effective_hourly: 11.11
+    wages_daily:
+      vendor: 88.88
+      delivery: 88.88
+      construction: 99.55
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Mississippi:
+    country: US
+    state: Mississippi
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: federal floor (no state minimum)
+  US-Missouri:
+    country: US
+    state: Missouri
+    currency: USD
+    basis_hourly: 13.0
+    effective_hourly: 13.0
+    wages_daily:
+      vendor: 104.0
+      delivery: 104.0
+      construction: 116.48
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Montana:
+    country: US
+    state: Montana
+    currency: USD
+    basis_hourly: 10.3
+    effective_hourly: 10.3
+    wages_daily:
+      vendor: 82.4
+      delivery: 82.4
+      construction: 92.29
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Nebraska:
+    country: US
+    state: Nebraska
+    currency: USD
+    basis_hourly: 12.0
+    effective_hourly: 12.0
+    wages_daily:
+      vendor: 96.0
+      delivery: 96.0
+      construction: 107.52
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Nevada:
+    country: US
+    state: Nevada
+    currency: USD
+    basis_hourly: 11.25
+    effective_hourly: 11.25
+    wages_daily:
+      vendor: 90.0
+      delivery: 90.0
+      construction: 100.8
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-New Hampshire:
+    country: US
+    state: New Hampshire
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-New Jersey:
+    country: US
+    state: New Jersey
+    currency: USD
+    basis_hourly: 15.13
+    effective_hourly: 15.13
+    wages_daily:
+      vendor: 121.04
+      delivery: 121.04
+      construction: 135.56
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-New Mexico:
+    country: US
+    state: New Mexico
+    currency: USD
+    basis_hourly: 11.5
+    effective_hourly: 11.5
+    wages_daily:
+      vendor: 92.0
+      delivery: 92.0
+      construction: 103.04
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-New York:
+    country: US
+    state: New York
+    currency: USD
+    basis_hourly: 16.0
+    effective_hourly: 16.0
+    wages_daily:
+      vendor: 128.0
+      delivery: 128.0
+      construction: 143.36
+    confidence: range
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: RANGE 16.00-17.00; 17.00 applies NYC/Long Island/Westchester - confirm region
+  US-North Carolina:
+    country: US
+    state: North Carolina
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-North Dakota:
+    country: US
+    state: North Dakota
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Ohio:
+    country: US
+    state: Ohio
+    currency: USD
+    basis_hourly: 10.45
+    effective_hourly: 10.45
+    wages_daily:
+      vendor: 83.6
+      delivery: 83.6
+      construction: 93.63
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Oklahoma:
+    country: US
+    state: Oklahoma
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Oregon:
+    country: US
+    state: Oregon
+    currency: USD
+    basis_hourly: 15.05
+    effective_hourly: 15.05
+    wages_daily:
+      vendor: 120.4
+      delivery: 120.4
+      construction: 134.85
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: standard rate; Portland metro/non-urban differ
+  US-Pennsylvania:
+    country: US
+    state: Pennsylvania
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Rhode Island:
+    country: US
+    state: Rhode Island
+    currency: USD
+    basis_hourly: 16.0
+    effective_hourly: 16.0
+    wages_daily:
+      vendor: 128.0
+      delivery: 128.0
+      construction: 143.36
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-South Carolina:
+    country: US
+    state: South Carolina
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: federal floor (no state minimum)
+  US-South Dakota:
+    country: US
+    state: South Dakota
+    currency: USD
+    basis_hourly: 11.2
+    effective_hourly: 11.2
+    wages_daily:
+      vendor: 89.6
+      delivery: 89.6
+      construction: 100.35
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Tennessee:
+    country: US
+    state: Tennessee
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: federal floor (no state minimum)
+  US-Texas:
+    country: US
+    state: Texas
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Utah:
+    country: US
+    state: Utah
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Vermont:
+    country: US
+    state: Vermont
+    currency: USD
+    basis_hourly: 13.67
+    effective_hourly: 13.67
+    wages_daily:
+      vendor: 109.36
+      delivery: 109.36
+      construction: 122.48
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Virginia:
+    country: US
+    state: Virginia
+    currency: USD
+    basis_hourly: 12.0
+    effective_hourly: 12.0
+    wages_daily:
+      vendor: 96.0
+      delivery: 96.0
+      construction: 107.52
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Washington:
+    country: US
+    state: Washington
+    currency: USD
+    basis_hourly: 17.13
+    effective_hourly: 17.13
+    wages_daily:
+      vendor: 137.04
+      delivery: 137.04
+      construction: 153.48
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-West Virginia:
+    country: US
+    state: West Virginia
+    currency: USD
+    basis_hourly: 8.75
+    effective_hourly: 8.75
+    wages_daily:
+      vendor: 70.0
+      delivery: 70.0
+      construction: 78.4
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Wisconsin:
+    country: US
+    state: Wisconsin
+    currency: USD
+    basis_hourly: 7.25
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state minimum wage
+  US-Wyoming:
+    country: US
+    state: Wyoming
+    currency: USD
+    basis_hourly: 5.15
+    effective_hourly: 7.25
+    wages_daily:
+      vendor: 58.0
+      delivery: 58.0
+      construction: 64.96
+    confidence: high
+    verified: false
+    source_url: https://www.dol.gov/agencies/whd/minimum-wage/state
+    note: state rate 5.15 is BELOW federal; federal 7.25 applies to covered employers
+  IN-Andhra Pradesh:
+    country: IN
+    state: Andhra Pradesh
+    currency: INR
+    basis_monthly_low: 12080
+    basis_monthly_high: 12080
+    basis_monthly_used: 12080
+    wages_daily:
+      vendor: 465
+      delivery: 465
+      construction: 521
+    confidence: firm
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: firm single figure
+  IN-Arunachal Pradesh:
+    country: IN
+    state: Arunachal Pradesh
+    currency: INR
+    basis_monthly_low: 9500
+    basis_monthly_high: 11000
+    basis_monthly_used: 10250
+    wages_daily:
+      vendor: 394
+      delivery: 394
+      construction: 441
+    confidence: range
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: range-midpoint ESTIMATE
+  IN-Assam:
+    country: IN
+    state: Assam
+    currency: INR
+    basis_monthly_low: 10000
+    basis_monthly_high: 12000
+    basis_monthly_used: 11000
+    wages_daily:
+      vendor: 423
+      delivery: 423
+      construction: 474
+    confidence: range
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: range-midpoint ESTIMATE
+  IN-Bihar:
+    country: IN
+    state: Bihar
+    currency: INR
+    basis_monthly_low: 10500
+    basis_monthly_high: 10500
+    basis_monthly_used: 10500
+    wages_daily:
+      vendor: 404
+      delivery: 404
+      construction: 452
+    confidence: firm
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: firm single figure
+  IN-Chhattisgarh:
+    country: IN
+    state: Chhattisgarh
+    currency: INR
+    basis_monthly_low: 10500
+    basis_monthly_high: 11500
+    basis_monthly_used: 11000
+    wages_daily:
+      vendor: 423
+      delivery: 423
+      construction: 474
+    confidence: range
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: range-midpoint ESTIMATE
+  IN-Delhi:
+    country: IN
+    state: Delhi
+    currency: INR
+    basis_monthly_low: 18456
+    basis_monthly_high: 18456
+    basis_monthly_used: 18456
+    wages_daily:
+      vendor: 710
+      delivery: 710
+      construction: 795
+    confidence: firm-govt-order
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: firm single figure
+  IN-Goa:
+    country: IN
+    state: Goa
+    currency: INR
+    basis_monthly_low: 10500
+    basis_monthly_high: 12000
+    basis_monthly_used: 11250
+    wages_daily:
+      vendor: 433
+      delivery: 433
+      construction: 485
+    confidence: range
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: range-midpoint ESTIMATE
+  IN-Gujarat:
+    country: IN
+    state: Gujarat
+    currency: INR
+    basis_monthly_low: 10000
+    basis_monthly_high: 11500
+    basis_monthly_used: 10750
+    wages_daily:
+      vendor: 413
+      delivery: 413
+      construction: 463
+    confidence: range
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: range-midpoint ESTIMATE
+  IN-Haryana:
+    country: IN
+    state: Haryana
+    currency: INR
+    basis_monthly_low: 11275
+    basis_monthly_high: 11275
+    basis_monthly_used: 11275
+    wages_daily:
+      vendor: 434
+      delivery: 434
+      construction: 486
+    confidence: firm
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: firm single figure
+  IN-Himachal Pradesh:
+    country: IN
+    state: Himachal Pradesh
+    currency: INR
+    basis_monthly_low: 11000
+    basis_monthly_high: 12500
+    basis_monthly_used: 11750
+    wages_daily:
+      vendor: 452
+      delivery: 452
+      construction: 506
+    confidence: range
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: range-midpoint ESTIMATE
+  IN-Jharkhand:
+    country: IN
+    state: Jharkhand
+    currency: INR
+    basis_monthly_low: 10000
+    basis_monthly_high: 11500
+    basis_monthly_used: 10750
+    wages_daily:
+      vendor: 413
+      delivery: 413
+      construction: 463
+    confidence: range
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: range-midpoint ESTIMATE
+  IN-Karnataka:
+    country: IN
+    state: Karnataka
+    currency: INR
+    basis_monthly_low: 16200
+    basis_monthly_high: 17500
+    basis_monthly_used: 16850
+    wages_daily:
+      vendor: 648
+      delivery: 648
+      construction: 726
+    confidence: range-LEGAL-CHALLENGE
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: range-midpoint ESTIMATE; 2026 notification under legal challenge - confirm
+      valid figure
+  IN-Kerala:
+    country: IN
+    state: Kerala
+    currency: INR
+    basis_monthly_low: 13500
+    basis_monthly_high: 15000
+    basis_monthly_used: 14250
+    wages_daily:
+      vendor: 548
+      delivery: 548
+      construction: 614
+    confidence: range
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: range-midpoint ESTIMATE
+  IN-Madhya Pradesh:
+    country: IN
+    state: Madhya Pradesh
+    currency: INR
+    basis_monthly_low: 11700
+    basis_monthly_high: 11700
+    basis_monthly_used: 11700
+    wages_daily:
+      vendor: 450
+      delivery: 450
+      construction: 504
+    confidence: firm
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: firm single figure
+  IN-Maharashtra:
+    country: IN
+    state: Maharashtra
+    currency: INR
+    basis_monthly_low: 11500
+    basis_monthly_high: 13500
+    basis_monthly_used: 12500
+    wages_daily:
+      vendor: 481
+      delivery: 481
+      construction: 539
+    confidence: range
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: range-midpoint ESTIMATE
+  IN-Manipur:
+    country: IN
+    state: Manipur
+    currency: INR
+    basis_monthly_low: 9500
+    basis_monthly_high: 11000
+    basis_monthly_used: 10250
+    wages_daily:
+      vendor: 394
+      delivery: 394
+      construction: 441
+    confidence: range
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: range-midpoint ESTIMATE
+  IN-Meghalaya:
+    country: IN
+    state: Meghalaya
+    currency: INR
+    basis_monthly_low: 9000
+    basis_monthly_high: 10500
+    basis_monthly_used: 9750
+    wages_daily:
+      vendor: 375
+      delivery: 375
+      construction: 420
+    confidence: range
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: range-midpoint ESTIMATE
+  IN-Mizoram:
+    country: IN
+    state: Mizoram
+    currency: INR
+    basis_monthly_low: 9500
+    basis_monthly_high: 11000
+    basis_monthly_used: 10250
+    wages_daily:
+      vendor: 394
+      delivery: 394
+      construction: 441
+    confidence: range
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: range-midpoint ESTIMATE
+  IN-Nagaland:
+    country: IN
+    state: Nagaland
+    currency: INR
+    basis_monthly_low: 9500
+    basis_monthly_high: 11000
+    basis_monthly_used: 10250
+    wages_daily:
+      vendor: 394
+      delivery: 394
+      construction: 441
+    confidence: range
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: range-midpoint ESTIMATE
+  IN-Odisha:
+    country: IN
+    state: Odisha
+    currency: INR
+    basis_monthly_low: 11200
+    basis_monthly_high: 11200
+    basis_monthly_used: 11200
+    wages_daily:
+      vendor: 431
+      delivery: 431
+      construction: 483
+    confidence: firm
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: firm single figure
+  IN-Punjab:
+    country: IN
+    state: Punjab
+    currency: INR
+    basis_monthly_low: 11389
+    basis_monthly_high: 11389
+    basis_monthly_used: 11389
+    wages_daily:
+      vendor: 438
+      delivery: 438
+      construction: 491
+    confidence: firm
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: firm single figure
+  IN-Rajasthan:
+    country: IN
+    state: Rajasthan
+    currency: INR
+    basis_monthly_low: 10000
+    basis_monthly_high: 10000
+    basis_monthly_used: 10000
+    wages_daily:
+      vendor: 385
+      delivery: 385
+      construction: 431
+    confidence: firm-approx (listed 10000+)
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: firm single figure
+  IN-Sikkim:
+    country: IN
+    state: Sikkim
+    currency: INR
+    basis_monthly_low: 9500
+    basis_monthly_high: 11000
+    basis_monthly_used: 10250
+    wages_daily:
+      vendor: 394
+      delivery: 394
+      construction: 441
+    confidence: range
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: range-midpoint ESTIMATE
+  IN-Tamil Nadu:
+    country: IN
+    state: Tamil Nadu
+    currency: INR
+    basis_monthly_low: 10000
+    basis_monthly_high: 12000
+    basis_monthly_used: 11000
+    wages_daily:
+      vendor: 423
+      delivery: 423
+      construction: 474
+    confidence: range
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: range-midpoint ESTIMATE
+  IN-Telangana:
+    country: IN
+    state: Telangana
+    currency: INR
+    basis_monthly_low: 12432
+    basis_monthly_high: 12432
+    basis_monthly_used: 12432
+    wages_daily:
+      vendor: 478
+      delivery: 478
+      construction: 535
+    confidence: firm
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: firm single figure
+  IN-Tripura:
+    country: IN
+    state: Tripura
+    currency: INR
+    basis_monthly_low: 8500
+    basis_monthly_high: 10000
+    basis_monthly_used: 9250
+    wages_daily:
+      vendor: 356
+      delivery: 356
+      construction: 399
+    confidence: range
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: range-midpoint ESTIMATE
+  IN-Uttar Pradesh:
+    country: IN
+    state: Uttar Pradesh
+    currency: INR
+    basis_monthly_low: 13224
+    basis_monthly_high: 13224
+    basis_monthly_used: 13224
+    wages_daily:
+      vendor: 509
+      delivery: 509
+      construction: 570
+    confidence: firm
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: firm single figure
+  IN-West Bengal:
+    country: IN
+    state: West Bengal
+    currency: INR
+    basis_monthly_low: 10500
+    basis_monthly_high: 12500
+    basis_monthly_used: 11500
+    wages_daily:
+      vendor: 442
+      delivery: 442
+      construction: 495
+    confidence: range
+    verified: false
+    source_url: https://labour.gov.in (see state Labour Dept notification)
+    note: range-midpoint ESTIMATE

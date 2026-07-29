@@ -1,0 +1,102 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.875,
+          22.0,
+          53.85
+        ]
+      },
+      "properties": {
+        "parameter": {
+          "T2M": {
+            "20230101": 18.59,
+            "20230102": 19.01,
+            "20230103": 18.84,
+            "20230104": 17.55,
+            "20230105": 17.64,
+            "20230106": 21.37,
+            "20230107": 22.73
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.5,
+          22.0,
+          7.46
+        ]
+      },
+      "properties": {
+        "parameter": {
+          "T2M": {
+            "20230101": 19.5,
+            "20230102": 19.9,
+            "20230103": 19.47,
+            "20230104": 18.4,
+            "20230105": 18.78,
+            "20230106": 21.87,
+            "20230107": 22.59
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.125,
+          22.0,
+          38.96
+        ]
+      },
+      "properties": {
+        "parameter": {
+          "T2M": {
+            "20230101": 19.99,
+            "20230102": 20.57,
+            "20230103": 20.12,
+            "20230104": 18.97,
+            "20230105": 20.14,
+            "20230106": 23.26,
+            "20230107": 23.6
+          }
+        }
+      }
+    }
+  ],
+  "header": {
+    "title": "NASA/POWER Source Native Resolution Daily Data",
+    "api": {
+      "version": "v2.9.4",
+      "name": "POWER Daily API"
+    },
+    "sources": [
+      "MERRA2"
+    ],
+    "fill_value": -999.0,
+    "time_standard": "LST",
+    "start": "20230101",
+    "end": "20230107"
+  },
+  "messages": [],
+  "parameters": {
+    "T2M": {
+      "units": "C",
+      "longname": "Temperature at 2 Meters"
+    }
+  },
+  "times": {
+    "data": 0.113,
+    "process": 0.02
+  },
+  "type": "FeatureCollection"
+}
