@@ -18,6 +18,12 @@ services:
         # requests from the frontend will be rejected -- this is
         # deliberately NOT defaulted to "*" now that a real frontend service
         # exists to point at.
+      - key: AUTH_SECRET
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
 
   - type: web
     name: pricing-heat-web
