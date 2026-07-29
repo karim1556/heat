@@ -158,9 +158,21 @@ def _load_stgcn(state_key: str, ctx) -> tuple[Any, Any]:
     return model, ckpt
 
 
+@app.get("/")
+def root():
+    return {
+        "status": "ok",
+        "service": "Heat Parametric API",
+        "version": "2.0.0",
+        "docs": "/docs",
+        "health": "/health"
+    }
+
+
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
+
 
 
 # --- /states ------------------------------------------------------------
