@@ -34,6 +34,7 @@ resolved state_key is retained (in the in-memory policy cache and responses).
 """
 
 import json
+import logging
 import os
 import uuid
 from datetime import date
@@ -42,6 +43,7 @@ from typing import Any, Optional, List, Dict
 import numpy as np
 import pandas as pd
 from fastapi import FastAPI, HTTPException, Request, Depends, Header
+from fastapi.responses import JSONResponse
 import backend.auth as auth
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -62,6 +64,8 @@ from backend.state_heatmap import build_state_heatmap
 from models.pricing.lsmc_pricer import LSMCPricer
 import backend.parametric as parametric
 
+logger = logging.getLogger(__name__)
+
 limiter = Limiter(key_func=get_remote_address)
 
 app = FastAPI(title="Pricing the Heat", version="2.0.0")
@@ -72,6 +76,31 @@ def startup_event():
 
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
+@app.exception_handler(HTTPException)
+async def custom_http_exception_handler(request: Request, exc: HTTPException):
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={"detail": exc.detail},
+        headers={
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "*",
+            "Access-Control-Allow-Headers": "*",
+        },
+    )
+
+@app.exception_handler(Exception)
+async def custom_unhandled_exception_handler(request: Request, exc: Exception):
+    logger.error(f"Unhandled exception on {request.url.path}: {exc}", exc_info=True)
+    return JSONResponse(
+        status_code=500,
+        content={"detail": f"Internal server error: {str(exc)}"},
+        headers={
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "*",
+            "Access-Control-Allow-Headers": "*",
+        },
+    )
 
 # FRONTEND_ORIGIN lets the deployed frontend (pricing-heat-web on Render, per
 # render.yaml) call this cross-origin backend; defaults to "*" for easy first
@@ -713,10 +742,13 @@ def heatmap(state_key: str, date: Optional[str] = None, coverage: str = "anchor"
         boundary_feat = _load_boundaries().get(state_key)
         if boundary_feat is not None:
             state_fetch_attempted = True
-            state_result = build_state_heatmap(
-                state_key, ctx, model, ckpt, pd.Timestamp(date), boundary_feat)
-            if state_result is not None:
-                return state_result
+            try:
+                state_result = build_state_heatmap(
+                    state_key, ctx, model, ckpt, pd.Timestamp(date), boundary_feat)
+                if state_result is not None:
+                    return state_result
+            except BaseException as err:
+                logger.warning(f"build_state_heatmap failed for {state_key}: {err}")
 
     weather_path = ctx.processed("weather.parquet")
     if not weather_path.exists():
