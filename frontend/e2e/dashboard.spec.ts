@@ -36,7 +36,7 @@ test.describe("heat map", () => {
   test("switching states re-centers the map and reloads grid data", async ({ page }) => {
     await page.goto("/");
     await expect(page.getByText(/state-level mu-TEVI index/i)).toBeVisible({ timeout: 15_000 });
-    await page.getByLabel("State").selectOption("US-Arizona");
+    await page.getByLabel(/state/i).first().selectOption("US-Arizona");
     await expect(page.getByText(/Phoenix/i)).toBeVisible({ timeout: 15_000 });
   });
 });
@@ -48,7 +48,7 @@ test.describe("simulate a policy", () => {
     await page.getByRole("button", { name: "Price", exact: true }).click();
     await expect(page.getByText(/income smoothing/i)).toBeVisible({ timeout: 15_000 });
     await expect(page.getByText(/Premium \(fair actuarial price\)/i)).toBeVisible();
-    await expect(page.getByText(/INR/)).toBeVisible();
+    await expect(page.getByText(/INR/).first()).toBeVisible();
     await expect(page.getByText(/Basis risk -- disclosed honestly/i)).toBeVisible();
   });
 
@@ -57,7 +57,7 @@ test.describe("simulate a policy", () => {
     await page.getByLabel(/pick a state manually/i).selectOption("US-Arizona");
     await page.getByRole("button", { name: "Price", exact: true }).click();
     await expect(page.getByText(/catastrophe insurance/i)).toBeVisible({ timeout: 15_000 });
-    await expect(page.getByText(/USD/)).toBeVisible();
+    await expect(page.getByText(/USD/).first()).toBeVisible();
   });
 
   test("explain panel shows the single dominant feature honestly", async ({ page }) => {
@@ -75,7 +75,7 @@ test.describe("simulate a policy", () => {
     await page.goto("/simulate");
     await page.getByLabel(/pick a state manually/i).selectOption("US-Alaska");
     await page.getByRole("button", { name: "Price", exact: true }).click();
-    await expect(page.getByText(/excluded from pricing/i)).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByText(/excluded from pricing/i).first()).toBeVisible({ timeout: 15_000 });
     await expect(page.getByText(/insufficient heat-exposure days/i)).toBeVisible();
   });
 

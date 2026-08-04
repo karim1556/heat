@@ -22,7 +22,7 @@ export type StateListEntry = {
   mode: StateMode;
 };
 
-export type ResolveLocationRequest = { lat: number; lon: number };
+export type ResolveLocationRequest = { lat?: number; lon?: number };
 
 export type ResolveLocationResponse = {
   country: string | null;

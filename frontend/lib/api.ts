@@ -78,10 +78,10 @@ export function getWindowOptions(): Promise<{ selectable_window_days: number[]; 
   return request<{ selectable_window_days: number[]; note: string }>("/window-options");
 }
 
-export function resolveLocation(body: ResolveLocationRequest): Promise<ResolveLocationResponse> {
+export function resolveLocation(body?: ResolveLocationRequest): Promise<ResolveLocationResponse> {
   return request<ResolveLocationResponse>("/resolve-location", {
     method: "POST",
-    body: JSON.stringify(body),
+    body: JSON.stringify(body || {}),
   });
 }
 
@@ -108,4 +108,18 @@ export function simulatePolicy(body: SimulatePolicyRequest): Promise<SimulatePol
 
 export function explainPolicy(policyId: string): Promise<ExplainResponse> {
   return request<ExplainResponse>(`/explain/${encodeURIComponent(policyId)}`);
+}
+
+export function analyzePolicy(resultData: SimulatePolicyResponse): Promise<{ analysis: string }> {
+  return request<{ analysis: string }>("/api/analyze_policy", {
+    method: "POST",
+    body: JSON.stringify({ result_data: resultData }),
+  });
+}
+
+export function chatPolicy(resultData: SimulatePolicyResponse, question: string): Promise<{ reply: string }> {
+  return request<{ reply: string }>("/api/chat_policy", {
+    method: "POST",
+    body: JSON.stringify({ result_data: resultData, question }),
+  });
 }

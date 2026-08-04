@@ -48,7 +48,7 @@ def _load_polygons() -> list[dict]:
     return polygons
 
 
-def resolve_state(lat: float, lon: float) -> dict:
+def resolve_state(lat: float, lon: float, coastal_tolerance_deg: float = 3.0) -> dict:
     """Resolve (lat, lon) to the India/US state whose real boundary contains it.
 
     Returns {country, state, state_key, mode="detected"} on a hit, or
@@ -62,7 +62,8 @@ def resolve_state(lat: float, lon: float) -> dict:
     an honest "detected but not priced", never fabricated pricing.
     """
     point = Point(lon, lat)  # shapely is (x=lon, y=lat)
-    for poly in _load_polygons():
+    polys = _load_polygons()
+    for poly in polys:
         if poly["prepared"].contains(point):
             return {
                 "country": poly["country"],
@@ -70,6 +71,24 @@ def resolve_state(lat: float, lon: float) -> dict:
                 "state_key": poly["state_key"],
                 "mode": "detected",
             }
+
+    # Coastal / simplified boundary fallback: find closest polygon within tolerance
+    closest = None
+    min_dist = float("inf")
+    for poly in polys:
+        dist = poly["geom"].distance(point)
+        if dist < min_dist:
+            min_dist = dist
+            closest = poly
+
+    if closest and min_dist <= coastal_tolerance_deg:
+        return {
+            "country": closest["country"],
+            "state": closest["state"],
+            "state_key": closest["state_key"],
+            "mode": "detected",
+        }
+
     return {
         "mode": "out_of_coverage",
         "message": (
@@ -78,3 +97,4 @@ def resolve_state(lat: float, lon: float) -> dict:
             f"currently covered."
         ),
     }
+

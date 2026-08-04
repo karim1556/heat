@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   ApiError,
   explainPolicy,
@@ -18,6 +18,9 @@ import { ErrorBanner } from "@/components/ErrorBanner";
 import { FeatureBars } from "@/components/FeatureBars";
 import { PayoutChart } from "@/components/PayoutChart";
 import { Sparkline } from "@/components/Sparkline";
+import { AIUnderwriter } from "@/components/AIUnderwriter";
+import { RiskRadarChart } from "@/components/RiskRadarChart";
+import { PremiumBarChart } from "@/components/PremiumBarChart";
 import {
   ShoppingBag,
   Building2,
@@ -167,39 +170,108 @@ export default function SimulatePage() {
     }
   }
 
-  function useMyLocation() {
-    setLocationNotice(null);
-    setError(null);
-    setResult(null);
-    if (!("geolocation" in navigator)) {
-      setLocationNotice("Geolocation isn't supported by this browser. Pick state manually.");
-      return;
+  const [autoDetected, setAutoDetected] = useState(false);
+
+  const getIpLocation = useCallback(async (): Promise<{ lat: number; lon: number } | null> => {
+    try {
+      const res = await fetch("https://ipwho.is/", { cache: "no-store" });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.success && typeof data.latitude === "number" && typeof data.longitude === "number") {
+          return { lat: data.latitude, lon: data.longitude };
+        }
+      }
+    } catch {
+      // try fallback
     }
-    setLoading(true);
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const { latitude: lat, longitude: lon } = position.coords;
-        resolveLocation({ lat, lon })
-          .then(async (geo) => {
-            if (geo.mode === "out_of_coverage") {
-              setLocationNotice(geo.message ?? "Location not covered yet. Pick state manually.");
-              setLoading(false);
-              return;
-            }
-            setLocationNotice(`Detected: ${geo.state}, ${geo.country}`);
-            await priceStateKey(geo.state_key!);
-          })
-          .catch((err: unknown) => {
-            setError(err instanceof ApiError ? err.message : "Couldn't resolve your location.");
-            setLoading(false);
-          });
-      },
-      () => {
-        setLocationNotice("Location permission denied. Pick your state manually below.");
-        setLoading(false);
-      },
-    );
-  }
+
+    try {
+      const res = await fetch("http://ip-api.com/json/", { cache: "no-store" });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.status === "success" && typeof data.lat === "number" && typeof data.lon === "number") {
+          return { lat: data.lat, lon: data.lon };
+        }
+      }
+    } catch {
+      // try fallback
+    }
+
+    return null;
+  }, []);
+
+  const handleLocationResolution = useCallback(
+    async (lat?: number, lon?: number, isAuto = false) => {
+      try {
+        const geo = await resolveLocation(lat !== undefined && lon !== undefined ? { lat, lon } : {});
+        if (geo.mode === "out_of_coverage") {
+          setLocationNotice(geo.message ?? "Location not covered yet. Pick state manually.");
+          if (!isAuto) setLoading(false);
+          return false;
+        }
+        setLocationNotice(`Detected: ${geo.state}, ${geo.country}`);
+        if (geo.state_key) {
+          setManualStateKey(geo.state_key);
+          await priceStateKey(geo.state_key);
+        }
+        return true;
+      } catch (err) {
+        if (!isAuto) {
+          setError(err instanceof ApiError ? err.message : "Couldn't resolve your location.");
+          setLoading(false);
+        }
+        return false;
+      }
+    },
+    [states, occupation, startDate, endDate, windowDays],
+  );
+
+  const useMyLocation = useCallback(
+    async (isAuto = false) => {
+      setLocationNotice(null);
+      if (!isAuto) {
+        setError(null);
+        setResult(null);
+        setLoading(true);
+      }
+
+      const tryIpFallback = async () => {
+        const ipLoc = await getIpLocation();
+        if (ipLoc) {
+          await handleLocationResolution(ipLoc.lat, ipLoc.lon, isAuto);
+        } else {
+          const ok = await handleLocationResolution(undefined, undefined, isAuto);
+          if (!ok && !isAuto) {
+            setLocationNotice("Location permission denied. Pick your state manually below.");
+          }
+        }
+      };
+
+      if (!("geolocation" in navigator)) {
+        await tryIpFallback();
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          const { latitude: lat, longitude: lon } = position.coords;
+          await handleLocationResolution(lat, lon, isAuto);
+        },
+        async () => {
+          await tryIpFallback();
+        },
+        { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 },
+      );
+    },
+    [getIpLocation, handleLocationResolution],
+  );
+
+  useEffect(() => {
+    if (states && states.length > 0 && !autoDetected) {
+      setAutoDetected(true);
+      useMyLocation(true);
+    }
+  }, [states, autoDetected, useMyLocation]);
 
   async function runExplain() {
     if (!result) return;
@@ -353,8 +425,10 @@ export default function SimulatePage() {
             <div className="pt-2">
               <button
                 type="button"
-                onClick={useMyLocation}
+                onClick={() => useMyLocation(false)}
                 disabled={loading}
+                aria-label="Use my location"
+                title="Auto-Detect My Location"
                 className="w-full flex items-center justify-center gap-2 rounded-xl bg-slate-100 hover:bg-slate-200/80 text-slate-800 px-4 py-2.5 text-xs font-bold transition-all disabled:opacity-50"
               >
                 <MapPin className="w-4 h-4 text-orange-500" />
@@ -369,10 +443,11 @@ export default function SimulatePage() {
 
             {/* Manual State Selector & Primary Price CTA */}
             <div className="pt-4 border-t border-slate-200/80 space-y-3">
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-500">
-                Or Select State Manually
+              <label htmlFor="state-select" className="block text-xs font-bold uppercase tracking-wider text-slate-500">
+                Or Pick a State Manually
               </label>
               <select
+                id="state-select"
                 value={manualStateKey}
                 onChange={(e) => setManualStateKey(e.target.value)}
                 disabled={!states}
@@ -394,6 +469,7 @@ export default function SimulatePage() {
                 type="button"
                 onClick={() => void priceStateKey(manualStateKey)}
                 disabled={loading || !manualStateKey}
+                aria-label="Price"
                 className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 text-white font-bold px-5 py-3.5 text-xs shadow-md shadow-orange-500/20 hover:shadow-lg hover:shadow-orange-500/30 hover:scale-[1.01] active:scale-95 transition-all duration-200 disabled:opacity-50"
               >
                 {loading ? (
@@ -437,7 +513,7 @@ export default function SimulatePage() {
             <div className="glass-card p-6 rounded-2xl border-l-4 border-l-amber-500 bg-amber-50/50 space-y-2">
               <div className="flex items-center gap-2 font-bold text-amber-900 text-sm">
                 <Info className="w-4 h-4 text-amber-600" />
-                <span>{result.coverage_mode === "excluded" ? "Region Excluded from Pricing" : "Out of Coverage Range"}</span>
+                <span>{result.coverage_mode === "excluded" ? "Excluded from pricing" : "Out of Coverage Range"}</span>
               </div>
               <p className="text-xs text-amber-800 leading-relaxed">{result.message}</p>
               <p className="text-[11px] text-amber-700/80 font-mono mt-2">{result.note}</p>
@@ -472,7 +548,7 @@ export default function SimulatePage() {
               {/* Dual Premium Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-slate-50/80 p-4 rounded-xl border border-slate-200/80">
-                  <div className="text-xs font-semibold text-slate-500">Fair Actuarial Price (LSMC)</div>
+                  <div className="text-xs font-semibold text-slate-500">Premium (fair actuarial price)</div>
                   <div className="font-mono text-3xl font-extrabold text-slate-900 mt-1">
                     {result.currency} {result.premium_lsmc?.toFixed(2)}
                   </div>
@@ -486,6 +562,10 @@ export default function SimulatePage() {
                   </div>
                   <div className="text-[11px] text-orange-700/80 mt-1">Loaded with capital risk margin</div>
                 </div>
+              </div>
+              
+              <div className="mt-4">
+                <PremiumBarChart result={result} windowDays={windowDays} />
               </div>
 
               {/* Payout Schedule Section */}
@@ -519,7 +599,7 @@ export default function SimulatePage() {
                 <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/80 space-y-3">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-800">
                     <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                    <span>Basis Risk Transparency Disclosure</span>
+                    <span>Basis risk -- disclosed honestly</span>
                   </div>
                   <div className="grid grid-cols-3 gap-2 text-center text-xs">
                     <div className="bg-white p-2 rounded-lg border border-slate-200/60">
@@ -540,6 +620,9 @@ export default function SimulatePage() {
                         {result.basis_risk.correlation.toFixed(2)}
                       </div>
                     </div>
+                  </div>
+                  <div className="mt-4">
+                    <RiskRadarChart result={result} />
                   </div>
                 </div>
               )}
@@ -610,6 +693,11 @@ export default function SimulatePage() {
                   )}
                 </div>
               )}
+              
+              {/* AI Underwriter Dashboard */}
+              <div className="border-t border-slate-200/80 pt-6">
+                <AIUnderwriter result={result} />
+              </div>
 
             </div>
           )}

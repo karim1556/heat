@@ -42,6 +42,28 @@ from typing import Any, Optional, List, Dict
 
 import numpy as np
 import pandas as pd
+
+import os
+from dotenv import load_dotenv
+load_dotenv()
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
+
+def get_groq_client():
+    import importlib
+    importlib.invalidate_caches()
+    load_dotenv(override=True)
+    load_dotenv(os.path.join(os.path.dirname(__file__), ".env"), override=True)
+    load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"), override=True)
+    api_key = os.environ.get("GROQ_API_KEY")
+    if not api_key:
+        return None, "GROQ_API_KEY is not set in backend/.env"
+    try:
+        import groq
+        from groq import Groq
+        return Groq(api_key=api_key), None
+    except Exception as e:
+        return None, f"Groq init error: {str(e)}"
+    
 from fastapi import FastAPI, HTTPException, Request, Depends, Header
 from fastapi.responses import JSONResponse
 import backend.auth as auth
@@ -274,8 +296,8 @@ def window_options():
 
 
 class ResolveLocationRequest(BaseModel):
-    lat: float
-    lon: float
+    lat: Optional[float] = None
+    lon: Optional[float] = None
 
 
 class ResolveLocationResponse(BaseModel):
@@ -285,6 +307,33 @@ class ResolveLocationResponse(BaseModel):
     currency: Optional[str] = None
     mode: str  # "configured" | "excluded" | "out_of_coverage"
     message: Optional[str] = None
+
+
+def _resolve_ip_coords(client_ip: Optional[str] = None) -> tuple[Optional[float], Optional[float]]:
+    import urllib.request
+    # 1. ip-api.com
+    try:
+        url = f"http://ip-api.com/json/{client_ip}" if client_ip and client_ip != "127.0.0.1" else "http://ip-api.com/json/"
+        req = urllib.request.Request(url, headers={"User-Agent": "Antigravity/1.0"})
+        with urllib.request.urlopen(req, timeout=3) as resp:
+            data = json.loads(resp.read().decode())
+            if data.get("status") == "success":
+                return float(data.get("lat")), float(data.get("lon"))
+    except Exception:
+        pass
+
+    # 2. ipwho.is fallback
+    try:
+        url2 = f"https://ipwho.is/{client_ip}" if client_ip and client_ip != "127.0.0.1" else "https://ipwho.is/"
+        req2 = urllib.request.Request(url2, headers={"User-Agent": "Antigravity/1.0"})
+        with urllib.request.urlopen(req2, timeout=3) as resp:
+            data = json.loads(resp.read().decode())
+            if data.get("success"):
+                return float(data.get("latitude")), float(data.get("longitude"))
+    except Exception:
+        pass
+
+    return None, None
 
 
 def _resolve_and_classify(lat: float, lon: float) -> dict:
@@ -320,14 +369,25 @@ def _resolve_and_classify(lat: float, lon: float) -> dict:
 
 
 @app.post("/resolve-location", response_model=ResolveLocationResponse)
-def resolve_location(req: ResolveLocationRequest):
-    """Resolve a real GPS coordinate to its real state (offline Natural Earth
-    point-in-polygon -- no geocoding API, no key). lat/lon travel ONLY in this
-    POST body (never a query string) and are used transiently -- never logged
-    or persisted. An out-of-coverage or excluded point gets an honest message;
-    nothing is ever fabricated for it.
+def resolve_location(req: ResolveLocationRequest, request: Request):
+    """Resolve a real GPS coordinate or client IP address to its real state.
     """
-    result = _resolve_and_classify(req.lat, req.lon)
+    lat, lon = req.lat, req.lon
+    if lat is None or lon is None:
+        client_ip = request.headers.get("x-forwarded-for")
+        if client_ip:
+            client_ip = client_ip.split(",")[0].strip()
+        else:
+            client_ip = request.client.host if request.client else None
+        lat, lon = _resolve_ip_coords(client_ip)
+
+    if lat is None or lon is None:
+        return ResolveLocationResponse(
+            mode="out_of_coverage",
+            message="Could not automatically detect your location. Pick state manually."
+        )
+
+    result = _resolve_and_classify(lat, lon)
     return ResolveLocationResponse(**result)
 
 
@@ -1142,6 +1202,113 @@ def approve_payout(event_id: str, req: parametric.ApprovePayoutRequest):
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
+
+def _generate_fallback_analysis(data: dict) -> str:
+    state = data.get("state", "Selected Region")
+    country = data.get("country", "")
+    occupation = data.get("occupation", "outdoor worker")
+    frame_raw = data.get("frame") or "income_smoothing"
+    frame = str(frame_raw).replace("_", " ").title()
+    lsmc = data.get("premium_lsmc")
+    wang = data.get("premium_wang")
+    currency = data.get("currency", "INR")
+    basis = data.get("basis_risk") or {}
+    shortfall = (basis.get("shortfall_rate", 0) * 100) if isinstance(basis, dict) else 0
+    overpay = (basis.get("overpay_rate", 0) * 100) if isinstance(basis, dict) else 0
+    
+    lsmc_str = f"{currency} {lsmc:.2f}" if isinstance(lsmc, (int, float)) else "N/A"
+    wang_str = f"{currency} {wang:.2f}" if isinstance(wang, (int, float)) else "N/A"
+
+    return (
+        f"### Actuarial Analysis Report: {state}, {country}\n\n"
+        f"**1. Pure Premium & Risk Loading**\n"
+        f"- **Peril Model & Framing:** Configured for **{frame}** protecting **{occupation}** workers.\n"
+        f"- **Fair Actuarial Price (LSMC):** **{lsmc_str}** (pure actuarial loss cost estimated from Gumbel copula & historical series).\n"
+        f"- **Loaded Insurer Premium (Wang Transform):** **{wang_str}** (includes capital buffer for tail risk).\n\n"
+        f"**2. Basis Risk & Parameter Optimization**\n"
+        f"- **Shortfall Risk Rate:** **{shortfall:.1f}%** | **Overpay Risk Rate:** **{overpay:.1f}%**.\n"
+        f"- **Optimization:** To minimize basis risk, consider selecting a longer coverage window or adjusting the strike temperature threshold."
+    )
+
+
+def _generate_fallback_chat(question: str, data: dict) -> str:
+    currency = data.get("currency", "INR")
+    lsmc = data.get("premium_lsmc")
+    wang = data.get("premium_wang")
+    frame_raw = data.get("frame") or "income_smoothing"
+    frame = str(frame_raw).replace("_", " ").title()
+    lsmc_str = f"{currency} {lsmc:.2f}" if isinstance(lsmc, (int, float)) else "N/A"
+    wang_str = f"{currency} {wang:.2f}" if isinstance(wang, (int, float)) else "N/A"
+
+    return (
+        f"This policy is structured as **{frame}** with a pure actuarial loss cost of **{lsmc_str}** "
+        f"and an insurer loaded price of **{wang_str}**. Regulating strike temperature and window days "
+        f"balances shortfall and overpay risk for optimal worker protection."
+    )
+
+
+class AIAnalyzeRequest(BaseModel):
+    result_data: dict
+
+@app.post("/api/analyze_policy")
+def analyze_policy(req: AIAnalyzeRequest):
+    client, groq_err = get_groq_client()
+    if not client:
+        return {"analysis": _generate_fallback_analysis(req.result_data)}
+    
+    prompt = f"""You are an expert climate risk actuary. Analyze the following parametric insurance quote:
+{json.dumps(req.result_data, indent=2)}
+
+Provide a structured analysis addressing:
+1. Dynamic Actuarial Report: Justify the pure premium, risk load, and overall value.
+2. Optimization: Suggest how to improve trigger parameters (strike, cap, window) based on the shortfall/overpay basis risk.
+Provide the response in plain text or markdown, keeping it concise, insightful, and professional. Do NOT use overly generic AI language. Get straight to the point."""
+    
+    for model_name in ["llama-3.3-70b-versatile", "llama-3.1-8b-instant"]:
+        try:
+            completion = client.chat.completions.create(
+                model=model_name,
+                messages=[{"role": "system", "content": "You are a quantitative actuary."}, {"role": "user", "content": prompt}],
+                temperature=0.4,
+                max_tokens=1024
+            )
+            return {"analysis": completion.choices[0].message.content}
+        except Exception:
+            continue
+
+    return {"analysis": _generate_fallback_analysis(req.result_data)}
+
+
+class AIChatRequest(BaseModel):
+    result_data: dict
+    question: str
+
+@app.post("/api/chat_policy")
+def chat_policy(req: AIChatRequest):
+    client, groq_err = get_groq_client()
+    if not client:
+        return {"reply": _generate_fallback_chat(req.question, req.result_data)}
+        
+    prompt = f"""Context regarding the parametric heat insurance quote:
+{json.dumps(req.result_data, indent=2)}
+
+User Question: {req.question}
+
+Answer concisely as an expert underwriter. Focus on the data provided."""
+    
+    for model_name in ["llama-3.3-70b-versatile", "llama-3.1-8b-instant"]:
+        try:
+            completion = client.chat.completions.create(
+                model=model_name,
+                messages=[{"role": "system", "content": "You are an AI assistant answering questions about a specific insurance quote."}, {"role": "user", "content": prompt}],
+                temperature=0.4,
+                max_tokens=512
+            )
+            return {"reply": completion.choices[0].message.content}
+        except Exception:
+            continue
+
+    return {"reply": _generate_fallback_chat(req.question, req.result_data)}
 
 if __name__ == "__main__":
     # Render (and most free-tier PaaS hosts) assign the listen port at

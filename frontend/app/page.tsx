@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Map as MapLibreMap, Popup } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import type { Feature, FeatureCollection, MultiPolygon, Point, Polygon } from "geojson";
@@ -9,7 +9,7 @@ import interpolate from "@turf/interpolate";
 import intersect from "@turf/intersect";
 import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
 import { featureCollection } from "@turf/helpers";
-import { ApiError, getHeatmap, getStateBoundary, getStates } from "@/lib/api";
+import { ApiError, getHeatmap, getStateBoundary, getStates, resolveLocation } from "@/lib/api";
 import type { HeatmapResponse, StateBoundary, StateListEntry } from "@/lib/types";
 import { ErrorBanner } from "@/components/ErrorBanner";
 import Link from "next/link";
@@ -190,6 +190,72 @@ export default function HeatmapPage() {
         setStatesError(err instanceof ApiError ? err.message : "Failed to load state list.");
       });
   }, []);
+
+  const [autoDetected, setAutoDetected] = useState(false);
+  const [locationNotice, setLocationNotice] = useState<string | null>(null);
+
+  const autoDetectLocation = useCallback(async () => {
+    const handleGeo = async (lat?: number, lon?: number) => {
+      try {
+        const geo = await resolveLocation(lat !== undefined && lon !== undefined ? { lat, lon } : {});
+        if (geo.state_key) {
+          setStateKey(geo.state_key);
+          setLocationNotice(`Detected: ${geo.state}, ${geo.country}`);
+        } else if (geo.message) {
+          setLocationNotice(geo.message);
+        }
+      } catch {
+        // fail silently for auto-detect on load
+      }
+    };
+
+    const getIpLocation = async () => {
+      try {
+        const res = await fetch("https://ipwho.is/", { cache: "no-store" });
+        if (res.ok) {
+          const data = await res.json();
+          if (data.success && typeof data.latitude === "number" && typeof data.longitude === "number") {
+            return { lat: data.latitude, lon: data.longitude };
+          }
+        }
+      } catch {}
+
+      try {
+        const res = await fetch("http://ip-api.com/json/", { cache: "no-store" });
+        if (res.ok) {
+          const data = await res.json();
+          if (data.status === "success" && typeof data.lat === "number" && typeof data.lon === "number") {
+            return { lat: data.lat, lon: data.lon };
+          }
+        }
+      } catch {}
+
+      return null;
+    };
+
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => handleGeo(pos.coords.latitude, pos.coords.longitude),
+        async () => {
+          const ipLoc = await getIpLocation();
+          if (ipLoc) await handleGeo(ipLoc.lat, ipLoc.lon);
+          else await handleGeo();
+        },
+        { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 }
+      );
+    } else {
+      const ipLoc = await getIpLocation();
+      if (ipLoc) await handleGeo(ipLoc.lat, ipLoc.lon);
+      else await handleGeo();
+    }
+  }, []);
+
+  useEffect(() => {
+    if (states && states.length > 0 && !autoDetected) {
+      setAutoDetected(true);
+      autoDetectLocation();
+    }
+  }, [states, autoDetected, autoDetectLocation]);
 
   // Initialize MapLibre
   useEffect(() => {
@@ -490,7 +556,7 @@ export default function HeatmapPage() {
 
             {/* Subtitle */}
             <p className="text-lg text-slate-600 leading-relaxed">
-              Real full-state heat forecasts derived from spatio-temporal graph neural networks, fused with worker wage-loss reinforcement learning models across 79 states.
+              Real full-state heat forecasts derived from spatio-temporal graph neural networks with a state-level mu-TEVI index, fused with worker wage-loss reinforcement learning models across 79 states.
             </p>
 
             {/* Key Value Badges Grid */}
@@ -651,10 +717,23 @@ export default function HeatmapPage() {
             
             {/* State Picker */}
             <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">
-                State & Territory ({states?.length || 0})
-              </label>
+              <div className="flex items-center justify-between mb-1">
+                <label htmlFor="main-state-select" className="block text-xs font-bold text-slate-700">
+                  State & Territory ({states?.length || 0})
+                </label>
+                <button
+                  type="button"
+                  onClick={autoDetectLocation}
+                  aria-label="Use my location"
+                  title="Auto-Detect My Location"
+                  className="text-[11px] text-amber-700 hover:text-amber-800 font-semibold flex items-center gap-1 bg-amber-50 hover:bg-amber-100 px-2 py-0.5 rounded transition-all"
+                >
+                  <MapPin className="w-3 h-3 text-orange-500" />
+                  <span>Auto-Detect</span>
+                </button>
+              </div>
               <select
+                id="main-state-select"
                 value={stateKey}
                 onChange={(e) => setStateKey(e.target.value)}
                 disabled={!states}
