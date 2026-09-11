@@ -62,18 +62,18 @@ interface PayoutEvent {
 import Link from "next/link";
 import { useAuth } from "@/components/AuthProvider";
 import { ArrowRight } from "lucide-react";
+import {
+  EMPTY_PARAMETRIC_STATS,
+  asArray,
+  asParametricStats,
+  readApiJson,
+} from "@/lib/parametric-api";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 export default function InsuranceDashboard() {
   const { user, getAuthHeaders } = useAuth();
-  const [stats, setStats] = useState({
-    total_cohorts: 0,
-    total_workers: 0,
-    total_active_policies: 0,
-    total_disbursed_inr: 0,
-    pending_approvals: 0
-  });
+  const [stats, setStats] = useState(EMPTY_PARAMETRIC_STATS);
 
   const [policyTemplates, setPolicyTemplates] = useState<PolicyTemplate[]>([]);
   const [activePolicies, setActivePolicies] = useState<ActivePolicy[]>([]);
@@ -101,16 +101,16 @@ export default function InsuranceDashboard() {
   const fetchData = async () => {
     try {
       const [resStats, resTemplates, resActivePols, resEvents] = await Promise.all([
-        fetch(`${API_BASE}/api/parametric/stats`).then((r) => r.json()),
-        fetch(`${API_BASE}/api/parametric/policy-templates`).then((r) => r.json()),
-        fetch(`${API_BASE}/api/parametric/active-policies`).then((r) => r.json()),
-        fetch(`${API_BASE}/api/parametric/payout-events`).then((r) => r.json())
+        fetch(`${API_BASE}/api/parametric/stats`).then((r) => readApiJson(r, EMPTY_PARAMETRIC_STATS)),
+        fetch(`${API_BASE}/api/parametric/policy-templates`).then((r) => readApiJson(r, [])),
+        fetch(`${API_BASE}/api/parametric/active-policies`).then((r) => readApiJson(r, [])),
+        fetch(`${API_BASE}/api/parametric/payout-events`).then((r) => readApiJson(r, []))
       ]);
 
-      setStats(resStats);
-      setPolicyTemplates(resTemplates);
-      setActivePolicies(resActivePols);
-      setPayoutEvents(resEvents);
+      setStats(asParametricStats(resStats));
+      setPolicyTemplates(asArray<PolicyTemplate>(resTemplates));
+      setActivePolicies(asArray<ActivePolicy>(resActivePols));
+      setPayoutEvents(asArray<PayoutEvent>(resEvents));
     } catch (err) {
       console.error("Failed to fetch insurance data:", err);
     }

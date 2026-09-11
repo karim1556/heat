@@ -99,19 +99,19 @@ interface PayoutEvent {
 
 import Link from "next/link";
 import { useAuth } from "@/components/AuthProvider";
+import {
+  EMPTY_PARAMETRIC_STATS,
+  asArray,
+  asParametricStats,
+  readApiJson,
+} from "@/lib/parametric-api";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 export default function AdminDashboard() {
   const { user, getAuthHeaders } = useAuth();
   const [activeTab, setActiveTab] = useState<"autopay" | "cohorts" | "marketplace" | "simulator">("autopay");
-  const [stats, setStats] = useState({
-    total_cohorts: 0,
-    total_workers: 0,
-    total_active_policies: 0,
-    total_disbursed_inr: 0,
-    pending_approvals: 0
-  });
+  const [stats, setStats] = useState(EMPTY_PARAMETRIC_STATS);
 
   const [cohorts, setCohorts] = useState<Cohort[]>([]);
   const [selectedCohortId, setSelectedCohortId] = useState<string>("");
@@ -160,22 +160,23 @@ export default function AdminDashboard() {
     try {
       const headers = getAuthHeaders();
       const [resStats, resCohorts, resTemplates, resActivePols, resEvents] = await Promise.all([
-        fetch(`${API_BASE}/api/parametric/stats`, { headers }).then((r) => r.json()),
-        fetch(`${API_BASE}/api/parametric/cohorts`, { headers }).then((r) => r.json()),
-        fetch(`${API_BASE}/api/parametric/policy-templates`, { headers }).then((r) => r.json()),
-        fetch(`${API_BASE}/api/parametric/active-policies`, { headers }).then((r) => r.json()),
-        fetch(`${API_BASE}/api/parametric/payout-events`, { headers }).then((r) => r.json())
+        fetch(`${API_BASE}/api/parametric/stats`, { headers }).then((r) => readApiJson(r, EMPTY_PARAMETRIC_STATS)),
+        fetch(`${API_BASE}/api/parametric/cohorts`, { headers }).then((r) => readApiJson(r, [])),
+        fetch(`${API_BASE}/api/parametric/policy-templates`, { headers }).then((r) => readApiJson(r, [])),
+        fetch(`${API_BASE}/api/parametric/active-policies`, { headers }).then((r) => readApiJson(r, [])),
+        fetch(`${API_BASE}/api/parametric/payout-events`, { headers }).then((r) => readApiJson(r, []))
       ]);
 
-      setStats(resStats);
-      setCohorts(resCohorts);
-      setPolicyTemplates(resTemplates);
-      setActivePolicies(resActivePols);
-      setPayoutEvents(resEvents);
+      setStats(asParametricStats(resStats));
+      setCohorts(asArray<Cohort>(resCohorts));
+      setPolicyTemplates(asArray<PolicyTemplate>(resTemplates));
+      setActivePolicies(asArray<ActivePolicy>(resActivePols));
+      setPayoutEvents(asArray<PayoutEvent>(resEvents));
 
-      if (resCohorts.length > 0 && !selectedCohortId) {
-        setSelectedCohortId(resCohorts[0].id);
-        setSimCohortId(resCohorts[0].id);
+      const safeCohorts = asArray<Cohort>(resCohorts);
+      if (safeCohorts.length > 0 && !selectedCohortId) {
+        setSelectedCohortId(safeCohorts[0].id);
+        setSimCohortId(safeCohorts[0].id);
       }
     } catch (err) {
       console.error("Failed to load parametric data:", err);
