@@ -158,7 +158,7 @@ export default function InsuranceDashboard() {
 
   if (!user || user.role !== "insurance_provider") {
     return (
-      <div className="min-h-[75vh] flex items-center justify-center p-4">
+      <div className="dashboard-auth dashboard-auth-insurance min-h-[75vh] flex items-center justify-center p-4">
         <div className="bg-white p-8 rounded-3xl max-w-md w-full text-center border border-slate-200 shadow-xl space-y-4">
           <div className="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 border border-sky-200 flex items-center justify-center mx-auto">
             <Landmark className="w-6 h-6" />
@@ -180,7 +180,7 @@ export default function InsuranceDashboard() {
   }
 
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+    <main className="dashboard-page dashboard-insurance max-w-7xl mx-auto px-4 sm:px-6 py-8">
       {/* Toast Notification */}
       {notification && (
         <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-slate-700 animate-slide-up">
