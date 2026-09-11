@@ -522,7 +522,7 @@ export default function SimulatePage() {
 
           {/* Configured pricing result */}
           {result && result.coverage_mode === "configured" && (
-            <div className="glass-card p-6 rounded-2xl space-y-6 border border-slate-200/90 shadow-lg">
+            <div data-testid="policy-result" className="glass-card p-6 rounded-2xl space-y-6 border border-slate-200/90 shadow-lg">
               
               {/* Region Header */}
               <div className="flex justify-between items-start border-b border-slate-200/80 pb-4">
