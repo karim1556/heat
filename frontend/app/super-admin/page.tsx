@@ -103,7 +103,7 @@ export default function SuperAdminPage() {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-[85vh] flex items-center justify-center p-4">
+      <div className="dashboard-auth dashboard-auth-super min-h-[85vh] flex items-center justify-center p-4">
         <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 max-w-md w-full shadow-2xl border border-slate-800 space-y-6 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none" />
 
@@ -174,7 +174,7 @@ export default function SuperAdminPage() {
   }
 
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+    <main className="dashboard-page dashboard-super max-w-7xl mx-auto px-4 sm:px-6 py-8">
       {notification && (
         <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-slate-700 animate-slide-up">
           <Sparkles className="w-5 h-5 text-amber-400 animate-pulse" />

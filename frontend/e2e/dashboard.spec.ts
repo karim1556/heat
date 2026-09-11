@@ -24,6 +24,25 @@
 
 import { expect, test } from "@playwright/test";
 
+test.describe("heat observatory shell", () => {
+  test("keeps the product navigation and map landmark available", async ({ page }) => {
+    await page.goto("/");
+    await expect(page.getByTestId("app-shell")).toBeVisible();
+    await expect(page.getByRole("navigation", { name: "Primary navigation" })).toContainText(
+      "Heat Map & Live Data",
+    );
+    await expect(page.getByTestId("observatory-map")).toBeVisible({ timeout: 15_000 });
+  });
+
+  test("keeps the simulator output and basis-risk disclosure reachable", async ({ page }) => {
+    await page.goto("/simulate");
+    await page.getByLabel(/pick a state manually/i).selectOption("IN-Assam");
+    await page.getByRole("button", { name: "Price", exact: true }).click();
+    await expect(page.getByTestId("policy-result")).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByText(/Basis risk -- disclosed honestly/i)).toBeVisible();
+  });
+});
+
 test.describe("heat map", () => {
   test("renders the real OSM basemap and a state's grid data", async ({ page }) => {
     await page.goto("/");

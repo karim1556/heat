@@ -606,7 +606,7 @@ export default function HeatmapPage() {
       </section>
 
       {/* Main Heat Map Interactive Section */}
-      <section ref={mapSectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 space-y-6">
+      <section ref={mapSectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 space-y-6" data-testid="observatory-map" aria-label="Live heat severity map">
         
         {/* Section Title */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
