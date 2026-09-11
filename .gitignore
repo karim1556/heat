@@ -76,3 +76,6 @@ Thumbs.db
 *.swo
 *.tmp
 *.log
+
+# Local Git worktrees
+.worktrees/
